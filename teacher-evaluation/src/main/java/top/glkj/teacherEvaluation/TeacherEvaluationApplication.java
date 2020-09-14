@@ -1,10 +1,11 @@
 package top.glkj.teacherEvaluation;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@MapperScan("top.glkj.teacherEvaluation.mapper")
+/**
+ * @author xgl
+ */
 @SpringBootApplication
 public class TeacherEvaluationApplication {
 
