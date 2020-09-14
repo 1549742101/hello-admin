@@ -1,0 +1,88 @@
+/*定义*/
+
+.top{
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+.top ul{
+    position: absolute;
+    right: 200px;
+}
+.top ul li{
+    display: inline-block;
+    line-height: 40px;
+}
+.top ul li a{
+    font-size: 14px;
+    color: white;
+}
+.main-nav{
+    height: 100px;
+}
+
+.nav-item{
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+.content-bg{
+    width: 100%;
+    height: 500px;
+    margin: 0 auto;
+    background-image:url("../images/slider-bg.jpg");
+}
+.theme{
+    top: 140px;
+    left: 420px;
+}
+.btns{
+    top: 150px;
+    left: 80px;
+}
+.login-form button,
+.btns li{
+    margin-left: 40px;
+    border: 2px solid white;
+}
+.theme-logo{
+    margin-top: -90px;
+    margin-bottom: 20px;
+}
+.label{
+    font-size: 16px;
+    margin-right: 10px;
+}
+.re-lab{
+    font-size: 16px;
+    margin-top: 6px;
+}
+.but-login{
+    margin-top: 20px;
+}
+.but-appraisal{
+    margin-bottom: 50px;
+}
+.appraisal-content{
+    width: 100%;
+    height: 450px;
+    margin: 0 auto;
+}
+.table-app{
+    bottom:20px;
+}
+.but-appraisal{
+    margin-left: 500px;
+}
+.re-content{
+    width: 100%;
+    height: 400px;
+    margin: 0 auto;
+}
+th{
+    font-size: 18px;
+    font-weight: 400;
+}
+.appraisal-table>td>input {
+    margin-left: 100px;
+}

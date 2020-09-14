@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../static/css/base.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <title></title>
 </head>
 <body>
-hello world
-<h1 th:text="${#dates.createToday()}"></h1>
+    <!--top 顶部 strat-->
+    <div class="top bg-dark fixed-top">
+        <ul>
+            <li><a  href="#"> 4</a></li>
+            <li><a  href="#">2 </a></li>
+            <li><a  href="#">3 </a></li>
+            <li><a  href="#">4 </a></li>
+        </ul>
+    </div>
+    <!--top 顶部 end-->
+    <!--导航栏 start-->
+    <div class="container ">
+        <nav class="navbar navbar-light bg-white main-nav">
+            <!--logo-->
+            <a href="index.html">
+                <img src="../static/images/1.png" class="float-left " width="140" height="80" alt="">
+            </a>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Student_appraisal.html">测评</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link " href="login.html">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="register.html">注册</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="perfect.html">完善信息</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!--导航栏 end-->
+    <!--中间内容 start-->
+       <div class="content-bg">
+           <div class="container position-relative">
+               <div class="theme position-absolute">
+                   <h1 class="text-white font-weight-bold">教师综合评教系统</h1>
+                   <h5 class="text-center text-white">you're welcome to!</h5>
+                   <div class="btns position-absolute">
+                       <ul>
+                           <!--<li class="btn text-white font-weight-bold btn-outline-info"><a class="text-white" href="login.html">登录</a></li>
+                           <li class="btn text-white font-weight-bold btn-outline-info"><a class="text-white" href="register.html">注册</a></li>-->
+                           <li class="btn text-white font-weight-bold btn-outline-info"><a class="text-white" href="Student_appraisal.html">去评教</a></li>
+                       </ul>
+                   </div>
+               </div>
+           </div>
+       </div>
+    <!--中间内容 start-->
+   <!--页脚 start-->
+       <div class="footer ">
+           <footer class="bg-white text-light p-5 text-center">
+               <p class="mb-0 text-black-50 font-weight-bold">企业培训 | 合作事宜 | 版权投诉</p>
+               <p class="text-black-50">© 2020 Winter Login. All rights reserved | 12345 <a href="#">111</a></p>
+           </footer>
+       </div>
+   <!--页脚 end-->
+<!--引用js-->
+<script src="../static/bootstrap/js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="../static/bootstrap/js/popper.js" type="text/javascript" charset="utf-8"></script>
+<script src="../static/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
 </body>
 </html>
