@@ -44,7 +44,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
+			<scope>${druid.version}</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>

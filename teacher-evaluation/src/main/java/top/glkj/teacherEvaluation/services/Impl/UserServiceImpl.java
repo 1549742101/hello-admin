@@ -26,13 +26,13 @@ public class UserServiceImpl implements UserService {
 
     /**
      *
-     * @param id
+     * @param loginName
      * @return
      */
     @Override
-    @Cacheable(cacheNames = "user",key = "#id")
-    public User getUerById(Integer id) {
-        User user = userMapper.getUerById(id);
+    @Cacheable(cacheNames = "user",key = "#loginName")
+    public User getUerByName(String loginName) {
+        User user = userMapper.getUerByName(loginName);
         return user;
     }
 }

@@ -16,8 +16,8 @@ class TeacherEvaluationApplicationTests {
 	UserMapper userMapper;
 
 	public User getUerById(){
-		User user = userMapper.getUerById(1);
-		System.out.println(user);
+//		User user = userMapper.getUerByName(1);
+//		System.out.println(user);
 		return null;
 	}
 

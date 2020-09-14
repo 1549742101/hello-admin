@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../static/css/base.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{../bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{../css/base.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../css/index.css}"/>
     <title>登录</title>
 </head>
 <body>
@@ -16,35 +16,34 @@
 <!--top 顶部 strat-->
 <div class="top bg-dark fixed-top">
     <ul>
-        <li><a  href="#"> 4</a></li>
-        <li><a  href="#">2 </a></li>
-        <li><a  href="#">3 </a></li>
-        <li><a  href="#">4 </a></li>
+        <li>
+        <a th:href="@{#}">请登录</a>
+        </li>
     </ul>
 </div>
 <!--top 顶部 end-->
 <!--导航栏 start-->
 <div class="container ">
     <nav class="navbar navbar-light bg-white main-nav">
-        <a href="index.html">
-        <img src="../static/images/1.png" class="float-left " width="140" height="80" alt="">
+        <a th:href="@{index.html}">
+        <img th:src="@{../static/images/1.png}" class="float-left " width="140" height="80" alt="" src="#">
         </a>
 
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" href="index.html">首页</a>
+                <a class="nav-link active" th:href="@{index.html}">首页</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Student_appraisal.html">测评</a>
+                <a class="nav-link" th:href="@{Student_appraisal.html}">测评</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="login.html">登录</a>
+                <a class="nav-link " th:href="@{login.html}">登录</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="register.html">注册</a>
+                <a class="nav-link " th:href="@{register.html}">注册</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="perfect.html">完善信息</a>
+                <a class="nav-link " th:href="@{perfect.html}">完善信息</a>
             </li>
         </ul>
     </nav>
@@ -56,14 +55,14 @@
     <div class="container position-relative">
         <div class="theme position-absolute">
             <h1 class="theme-logo text-white font-weight-bold">登录</h1>
-            <form action="" class="login-form text-white">
+            <form th:action="@{/user/login}" method="post" class="login-form text-white">
                 <div class="form-row">
                     <label class="label" for="userName">用户名</label>
-                    <input type="text" class="form-control" name="userName" id="userName" placeholder="用户名" required>
+                    <input type="text" class="form-control" name="loginName" id="userName" placeholder="用户名" required>
                 </div>
                 <div class="form-row">
                     <label class="label" for="Password1">密码</label>
-                    <input type="password" class="form-control" id="Password1" placeholder="密码" required>
+                    <input type="password" class="form-control" id="Password1" name="passWord" placeholder="密码" required>
                 </div>
                 <div class="but-login">
                     <button type="submit" class="btn text-white btn-outline-info ">登录</button>
@@ -84,8 +83,8 @@
 </div>
 <!--页脚 end-->
 <!--引用js-->
-<script src="../static/bootstrap/js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
-<script src="../static/bootstrap/js/popper.js" type="text/javascript" charset="utf-8"></script>
-<script src="../static/bootstrap/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{../bootstrap/js/jquery-3.3.1.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{../bootstrap/js/popper.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{../bootstrap/js/bootstrap.min.js}" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

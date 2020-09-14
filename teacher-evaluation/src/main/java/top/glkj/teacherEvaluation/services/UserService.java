@@ -10,5 +10,5 @@ import top.glkj.teacherEvaluation.bean.User;
  */
 
 public interface UserService {
-    public User getUerById(Integer id);
+    public User getUerByName(String loginName);
 }
