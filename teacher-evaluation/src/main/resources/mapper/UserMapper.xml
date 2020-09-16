@@ -5,8 +5,10 @@
 	namespace：命名空间，其值为某一个dao层类的具体路径
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.UserMapper">
-    <select id="getUerByName"  parameterType="string" resultType="top.glkj.teacherEvaluation.bean.User">
-	SELECT * FROM user WHERE login_name = #{loginName}
+    <select id="getUerByLoginName" parameterType="integer" resultType="top.glkj.teacherEvaluation.bean.User">
+	    SELECT * FROM user WHERE id = #{id}
     </select>
+    <insert>
 
+    </insert>
 </mapper>

@@ -10,5 +10,15 @@ import top.glkj.teacherEvaluation.bean.User;
  */
 
 public interface UserService {
-    public User getUerByName(String loginName);
+    /**
+     * 根据用户登录名获取用户
+     * @param loginName 登录名
+     * @return user
+     */
+    public User getUserByLoginName(String loginName);
+    public boolean addUser(User user);
+    public boolean updateUser(User user);
+    public boolean updateUserPassword(User user,String password);
+    public boolean deleteUser(int id);
+
 }

@@ -11,6 +11,10 @@ import top.glkj.teacherEvaluation.bean.User;
  */
 @Mapper
 public interface UserMapper {
-
-    public User getUerByName(String loginName);
+    /**
+     * 根据
+     * @param loginName
+     * @return
+     */
+    public User getUerByLoginName(String loginName);
 }

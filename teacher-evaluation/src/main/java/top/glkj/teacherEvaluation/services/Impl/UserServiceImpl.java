@@ -19,20 +19,35 @@ import top.glkj.teacherEvaluation.services.UserService;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     @Autowired
-    RedisTemplate<Object, User> userredisTemplate;
+    RedisTemplate<Object, User> userRedisTemplate;
 
-    /**
-     *
-     * @param loginName
-     * @return
-     */
     @Override
     @Cacheable(cacheNames = "user",key = "#loginName")
-    public User getUerByName(String loginName) {
-        User user = userMapper.getUerByName(loginName);
-        return user;
+    public User getUserByLoginName(String loginName) {
+        User uerByLoginName = userMapper.getUerByLoginName(loginName);
+        return uerByLoginName;
+    }
+
+    @Override
+    public boolean addUser(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean updateUser(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean updateUserPassword(User user, String password) {
+        return false;
+    }
+
+    @Override
+    public boolean deleteUser(int id) {
+        return false;
     }
 }
