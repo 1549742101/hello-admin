@@ -1,0 +1,2 @@
+1600070250940|65|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600070253163|55|statement|connection 0|SELECT * FROM user WHERE id = ?|SELECT * FROM user WHERE id = 1
