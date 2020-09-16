@@ -1,9 +1,14 @@
-/*
+package top.glkj.teacherEvaluation.bean;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+import java.util.Date;
+/**
  * @author ：高铭
  * @date ：Created in 2020/9/15 14:21
- * @description：
- * @modified By：
- * @version: $
  * 保存教师成绩结果
  * | 字段名      | 类型     | 描述                           |
 | ----------- | -------- | ------------------------------ |
@@ -13,21 +18,12 @@
 | date        | datetime | 日期                           |
 | batch       | int      | 批次                           |
  */
-package top.glkj.teacherEvaluation.bean;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class Res extends BaseEntity {
-    private int id;
+public class Result extends BaseEntity {
+    private User teacher;
     private int type;
     private int totalScore;
     private Date date;
