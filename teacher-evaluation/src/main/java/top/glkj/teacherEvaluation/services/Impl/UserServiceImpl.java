@@ -1,4 +1,5 @@
 /**
+ * 需要加@Service
  * @author ：高铭
  * @date ：Created in 2020/9/14 10:37
  * @description：
@@ -22,7 +23,7 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Autowired
-    RedisTemplate<Object, User> userredisTemplate;
+    RedisTemplate<Object, User> userRedisTemplate;
 
     /**
      *
@@ -32,7 +33,21 @@ public class UserServiceImpl implements UserService {
     @Override
     @Cacheable(cacheNames = "user",key = "#loginName")
     public User getUerByName(String loginName) {
-        User user = userMapper.getUerByName(loginName);
-        return user;
+        return userMapper.getUerByName(loginName);
+    }
+
+    @Override
+    public int insertUserByName(User user) {
+        return userMapper.insertUserByName(user);
+    }
+
+    @Override
+    public int updateUserByName(User user) {
+        return userMapper.updateUserByName(user);
+    }
+
+    @Override
+    public int deleteUser(int id) {
+        return userMapper.deleteUser(id);
     }
 }

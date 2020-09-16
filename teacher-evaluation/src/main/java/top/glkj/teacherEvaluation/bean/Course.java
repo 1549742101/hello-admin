@@ -19,13 +19,15 @@ import java.util.Set;
  * | teacher_id | int         | 授课教师     |
  * | start_time | datetime    | 授课开始时间 |
  * | end_time   | datetime    | 授课结束时间 |
- */
+ * description  | varchar(128)|  描述      |
+  */
 @Data
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class Course extends BaseEntity{
     private int id;
+    private String description;
     private String couName;
     private int teacherId;
     private Date startTime;

@@ -22,13 +22,12 @@ import java.util.Arrays;
 @Configuration
 public class MyRedisConfig {
     @Bean
-    public RedisTemplate<Object, User> userredisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
+    public RedisTemplate<Object, User> userRedisTemplate(RedisConnectionFactory redisConnectionFactory) throws UnknownHostException {
         RedisTemplate<Object, User> template = new RedisTemplate();
         template.setConnectionFactory(redisConnectionFactory);
         /*
          * 序列化规则
          */
-
         Jackson2JsonRedisSerializer<User> serializer =  new Jackson2JsonRedisSerializer<>(User.class);
         template.setDefaultSerializer(serializer);
         return template;

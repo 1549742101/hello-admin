@@ -9,4 +9,15 @@
 	SELECT * FROM user WHERE login_name = #{loginName}
     </select>
 
+    <insert id="insertUserByName" parameterType="top.glkj.teacherEvaluation.bean.User">
+        INSERT INTO user(login_name,user_name,login_pass) VALUE (#{loginName},#{userName},#{passWord})
+    </insert>
+
+    <update id="updateUserByName" parameterType="top.glkj.teacherEvaluation.bean.User">
+        UPDATE user SET (login_name = #{loginName},user_name = #{userName},login_pass = #{passWord}) where id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+    DELETE FROM user WHERE id = #{id}
+    </delete>
 </mapper>

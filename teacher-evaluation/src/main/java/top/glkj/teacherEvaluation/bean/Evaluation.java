@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Set;
 
 /**
@@ -20,6 +19,7 @@ import java.util.Set;
  * | name           | varchar(20)  | 类型名称 |
  * | sort           | int          | 排序     |
  * | weights        | decimal(4,2) | 权重     |
+ * permissions_id   |varchar(100)  |需要权限   |
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -28,6 +28,7 @@ import java.util.Set;
 public class Evaluation extends BaseEntity{
     private int id;
     private String evaName;
+    private String permissionsId;
     /**
      * 评卷教师用户编号
      */
