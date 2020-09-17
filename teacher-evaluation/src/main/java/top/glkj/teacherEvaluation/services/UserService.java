@@ -12,29 +12,29 @@ import top.glkj.teacherEvaluation.bean.User;
 public interface UserService {
     /**
      *根据工号或者学号进行登录
-     * @param loginName
-     * @return
+     * @param loginName 秒
+     * @return  User
      */
     public User getUerByName(String loginName);
 
     /**
      *新增一个用户
-     * @param user
-     * @return
+     * @param user user对象
+     * @return int类型
      */
     public int insertUserByName(User user);
 
     /**
      * 改变信息
-     * @param user
-     * @return
+     * @param user user对象
+     * @return int类型
      */
     public int updateUserByName(User user);
 
     /**
      * 根据id删除用户
-     * @param id
-     * @return
+     *@param id id
+     * @return int类型
      */
     public int deleteUser(int id);
 }

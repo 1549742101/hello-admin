@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+ -->
+<mapper namespace="top.glkj.teacherEvaluation.mapper.QuestionnaireMapper">
+
+    <select id="selectQuestionnaire"  resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
+            SELECT p.id,
+                   p.name,
+                   p.sort,
+                   p.weights,
+                   p.parent_id,
+                   p.type_id
+			       FROM questionnaire AS p;
+    </select>
+    <select id="selectQuestionnaireById"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
+            SELECT p.id,
+                   p.name,
+                   p.sort,
+                   p.weights,
+                   p.parent_id,
+                   p.type_id
+			       FROM questionnaire AS p WHERE p.id=#{id};
+    </select>
+
+    <select id="selectQuestionnaireByTypeId"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
+            SELECT p.id,
+                   p.name,
+                   p.sort,
+                   p.weights,
+                   p.parent_id,
+                   p.type_id
+			       FROM questionnaire AS p WHERE p.type_id=#{typeId};
+    </select>
+
+    <insert id="addQuestionnaire" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
+        INSERT INTO Questionnaire(name,sort,weights,parent_id,type_id) VALUE (#{queName},#{sort},#{weights},#{parentId},#{typeId})
+    </insert>
+
+    <update id="updateUserById" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
+        UPDATE Questionnaire SET (name = #{queName},sort = #{sort},weights = #{weights},parent_id = #{parentId},type_id = #{typeId}) where id = #{id}
+    </update>
+
+    <delete id="deleteQuestionnaire" parameterType="int">
+        DELETE FROM Questionnaire WHERE id = #{id}
+    </delete>
+</mapper>

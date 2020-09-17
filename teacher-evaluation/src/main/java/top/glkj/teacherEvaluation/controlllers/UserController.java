@@ -22,26 +22,27 @@ public class UserController {
 
     /**
      * 登陆页面控制器，默认为欢迎页面
-     * @return
+     * @return login
      */
     @GetMapping({"/","/index","/index.html"})
     public String index(){
         return "login";
     }
 
+    /**
+     *
+     * @return Student_appraisal
+     */
     @GetMapping("/user/ping")
     public String pingJiao(){
-        
-        int[] a;
-        int b[];
         return "Student_appraisal";
     }
 
     /**
      * 登录控制器，跳转到主页面
-     * @param user
-     * @param model
-     * @return
+     * @param user user
+     * @param model model
+     * @return index
      */
     @RequestMapping("/user/login")
     public String getUer(User user,Model model){
@@ -53,9 +54,9 @@ public class UserController {
 
     /**
      * 新增一个用户（注册）
-     * @param user
-     * @param model
-     * @return
+     * @param user user
+     * @param model model
+     * @return login
      */
     @RequestMapping("/user/reg")
     public String insertUer(User user, Model model){
@@ -65,9 +66,9 @@ public class UserController {
 
     /**
      * 改变信息
-     * @param user
-     * @param model
-     * @return
+     * @param user user
+     * @param model model
+     * @return index
      */
     @RequestMapping("/user/update")
     public String updateUer(User user, Model model){
@@ -77,9 +78,9 @@ public class UserController {
 
     /**
      * 删除一个用户
-     * @param id
-     * @param model
-     * @return
+     * @param id id
+     * @param model model
+     * @return index
      */
     @RequestMapping("/user/del")
     public String delUer(int id, Model model){

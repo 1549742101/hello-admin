@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+ -->
+<mapper namespace="top.glkj.teacherEvaluation.mapper.EvaluationTypeMapper">
+
+    <select id="getEvaluationType" parameterType="int" resultType="top.glkj.teacherEvaluation.bean.EvaluationType">
+        SELECT * FROM evaluation_type
+    </select>
+
+    <select id="getEvaluationTypeById"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.EvaluationType">
+	SELECT * FROM evaluation_type WHERE id = #{id}
+    </select>
+
+    <insert id="addEvaluationType" parameterType="top.glkj.teacherEvaluation.bean.EvaluationType">
+        INSERT INTO evaluation_type(name,permissions_id,sort,weights,start_time,end_time) VALUE (#{evaName},#{permissionsId},#{sort},#{weights},#{startTime},#{endTime})
+    </insert>
+
+    <update id="updateEvaluationTypeById" parameterType="top.glkj.teacherEvaluation.bean.EvaluationType">
+        UPDATE evaluation_type SET (name = #{evaName},permissions_id = #{permissionsId},sort = #{sort},weights = #{weights},start_time = #{startTime},},end_time = #{endTime})
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEvaluationType">
+    DELETE FROM evaluation_type WHERE id = #{id}
+    </delete>
+</mapper>
