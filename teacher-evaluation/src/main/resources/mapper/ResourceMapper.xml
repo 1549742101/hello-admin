@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+	    private int id;
+    private String resName;
+    private String url;
+    /**
+     * 当前级别
+     */
+    private int level;
+ -->
+
+<mapper namespace="top.glkj.teacherEvaluation.mapper.ResourceMapper">
+
+    <resultMap id="BaseResource" type="top.glkj.teacherEvaluation.bean.Resource">
+        <id column="id" property="id"></id>
+        <result column="name" property="resName"></result>
+        <result column="url" property="url"></result>
+        <result column="parent_id" property="parentId"></result>
+    </resultMap>
+
+    <select id="getResource" parameterType="string" resultMap="BaseResource">
+        SELECT id,name,url,level,parent_id FROM resource;
+    </select>
+
+    <insert id="insertResource" parameterType="top.glkj.teacherEvaluation.bean.Resource">
+        INSERT INTO resource(name,url,level,parent_id) VALUE (#{resName},#{url},#{level},#{parentId})
+    </insert>
+
+    <update id="updateResourceById" parameterType="top.glkj.teacherEvaluation.bean.Resource">
+        UPDATE resource SET (name = #{resName},url = #{url},level = #{level},parent_id = #{parentId}) where id = #{id}
+    </update>
+
+    <delete id="deleteResource">
+        DELETE FROM resource WHERE id = #{id}
+    </delete>
+</mapper>

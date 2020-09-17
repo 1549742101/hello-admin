@@ -6,6 +6,8 @@ import top.glkj.teacherEvaluation.bean.Permission;
 import top.glkj.teacherEvaluation.mapper.PermissionMapper;
 import top.glkj.teacherEvaluation.services.PermissionService;
 
+import java.util.List;
+
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/16 10:58
@@ -18,7 +20,7 @@ public class PermissionServiceImpl implements PermissionService {
     RedisTemplate<Object, Permission> permissionRedisTemplate;
 
     @Override
-    public Permission selectPermission(int id) {
+    public List<Permission> selectPermission(int id) {
         return permissionMapper.selectPermission(id);
     }
 }

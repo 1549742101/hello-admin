@@ -6,6 +6,8 @@ import top.glkj.teacherEvaluation.bean.Questionnaire;
 import top.glkj.teacherEvaluation.mapper.QuestionnaireMapper;
 import top.glkj.teacherEvaluation.services.QuestionnaireService;
 
+import java.util.List;
+
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/16 16:46
@@ -23,7 +25,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
-    public Questionnaire selectQuestionnaireById(int id) {
+    public List<Questionnaire> selectQuestionnaireById(int id) {
         return questionnaireMapper.selectQuestionnaireById(id);
     }
 
@@ -34,7 +36,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
-    public Questionnaire selectQuestionnaireByTypeId(int typeId) {
+    public List<Questionnaire> selectQuestionnaireByTypeId(int typeId) {
         return questionnaireMapper.selectQuestionnaireByTypeId(typeId);
     }
 
@@ -44,7 +46,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
-    public Questionnaire selectQuestionnaire() {
+    public List<Questionnaire> selectQuestionnaire() {
         return questionnaireMapper.selectQuestionnaire();
     }
 

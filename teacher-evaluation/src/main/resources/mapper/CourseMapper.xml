@@ -5,12 +5,20 @@
 	namespace：命名空间，其值为某一个dao层类的具体路径
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.CourseMapper">
+    <resultMap id="BaseCourse" type="top.glkj.teacherEvaluation.bean.Course">
+        <id column="id" property="id"></id>
+        <result column="name" property="couName"></result>
+        <result column="credit" property="credit"></result>
+        <result column="description" property="description"></result>
+        <result column="start_time" property="startTime"></result>
+        <result column="end_time" property="endTime"></result>
+    </resultMap>
 
-    <select id="getAllCourse"  resultType="top.glkj.teacherEvaluation.bean.Course">
+    <select id="getAllCourse"  resultMap="BaseCourse">
         SELECT credit,description,id,name,start_time,end_time FROM course;
     </select>
 
-    <select id="getCourseById"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Course">
+    <select id="getCourseById"  parameterType="int" resultMap="BaseCourse">
 	SELECT credit,description,id,name,start_time,end_time FROM course WHERE id = #{id}
     </select>
 

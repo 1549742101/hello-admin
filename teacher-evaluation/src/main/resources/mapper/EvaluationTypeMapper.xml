@@ -5,12 +5,20 @@
 	namespace：命名空间，其值为某一个dao层类的具体路径
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.EvaluationTypeMapper">
-
-    <select id="getEvaluationType" parameterType="int" resultType="top.glkj.teacherEvaluation.bean.EvaluationType">
+    <resultMap id="BaseEvaluationType" type="top.glkj.teacherEvaluation.bean.EvaluationType">
+        <id column="id" property="id"></id>
+        <result column="name" property="evaName"></result>
+        <result column="permissions_id" property="permissionsId"></result>
+        <result column="sort" property="sort"></result>
+        <result column="weights" property="weights"></result>
+        <result column="start_time" property="startTime"></result>
+        <result column="end_time" property="endTime"></result>
+    </resultMap>
+    <select id="getEvaluationType" parameterType="int" resultMap="BaseEvaluationType">
         SELECT * FROM evaluation_type
     </select>
 
-    <select id="getEvaluationTypeById"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.EvaluationType">
+    <select id="getEvaluationTypeById"  parameterType="int" resultMap="BaseEvaluationType">
 	SELECT * FROM evaluation_type WHERE id = #{id}
     </select>
 

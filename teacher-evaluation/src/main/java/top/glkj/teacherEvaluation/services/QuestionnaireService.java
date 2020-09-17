@@ -2,6 +2,8 @@ package top.glkj.teacherEvaluation.services;
 
 import top.glkj.teacherEvaluation.bean.Questionnaire;
 
+import java.util.List;
+
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/16 16:42
@@ -12,20 +14,20 @@ public interface QuestionnaireService {
      * @param id id
      * @return Questionnaire
      */
-    public Questionnaire selectQuestionnaireById(int id);
+    public List<Questionnaire> selectQuestionnaireById(int id);
 
     /**
      * 根据typeId （评教类型id）查询评教问卷表题目
      * @param typeId 类型id
      * @return Questionnaire
      */
-    public Questionnaire selectQuestionnaireByTypeId(int typeId);
+    public List<Questionnaire> selectQuestionnaireByTypeId(int typeId);
 
     /**
      * 无条件查询所有评教问卷表题目
      * @return Questionnaire
      */
-    public Questionnaire selectQuestionnaire();
+    public List<Questionnaire> selectQuestionnaire();
     /**
      * 插入一个题目
      * @param questionnaire addQuestionnaire对象

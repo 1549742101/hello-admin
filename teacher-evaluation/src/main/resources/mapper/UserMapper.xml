@@ -17,7 +17,7 @@
         UPDATE user SET (login_name = #{loginName},user_name = #{userName},login_pass = #{passWord}) where id = #{id}
     </update>
 
-    <delete id="deleteUser">
+    <delete id="deleteUser" parameterType="int">
     DELETE FROM user WHERE id = #{id}
     </delete>
 </mapper>

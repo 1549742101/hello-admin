@@ -6,6 +6,8 @@ import top.glkj.teacherEvaluation.bean.EvaluationType;
 import top.glkj.teacherEvaluation.mapper.EvaluationTypeMapper;
 import top.glkj.teacherEvaluation.services.EvaluationTypeService;
 
+import java.util.List;
+
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/16 16:51
@@ -22,7 +24,7 @@ public class EvaluationTypeServiceImpl implements EvaluationTypeService {
      * @return EvaluationType
      */
     @Override
-    public EvaluationType getEvaluationType() {
+    public List<EvaluationType> getEvaluationType() {
         return evaluationTypeMapper.getEvaluationType();
     }
 
@@ -33,7 +35,7 @@ public class EvaluationTypeServiceImpl implements EvaluationTypeService {
      * @return EvaluationType
      */
     @Override
-    public EvaluationType getEvaluationTypeById(int id) {
+    public List<EvaluationType> getEvaluationTypeById(int id) {
         return evaluationTypeMapper.getEvaluationTypeById(id);
     }
 

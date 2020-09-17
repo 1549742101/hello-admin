@@ -5,7 +5,12 @@
 	namespace：命名空间，其值为某一个dao层类的具体路径
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.PermissionMapper">
-    <select id="selectPermission"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Permission">
+    <resultMap id="BasePermission" type="top.glkj.teacherEvaluation.bean.Permission">
+        <id column="id" property="id"></id>
+        <result column="name" property="perName"></result>
+        <result column="description" property="description"></result>
+    </resultMap>
+    <select id="selectPermission"  parameterType="int" resultMap="BasePermission">
             SELECT p.id,
                    p.name,
                    p.description

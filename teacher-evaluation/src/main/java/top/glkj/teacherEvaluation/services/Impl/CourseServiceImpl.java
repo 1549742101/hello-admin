@@ -6,6 +6,8 @@ import top.glkj.teacherEvaluation.bean.Course;
 import top.glkj.teacherEvaluation.mapper.CourseMapper;
 import top.glkj.teacherEvaluation.services.CourseService;
 
+import java.util.List;
+
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/17 9:10
@@ -20,7 +22,7 @@ public class CourseServiceImpl implements CourseService {
      * @return Course对象
      */
     @Override
-    public Course getAllCourse() {
+    public List<Course> getAllCourse() {
         return courseMapper.getAllCourse();
     }
 
@@ -31,7 +33,7 @@ public class CourseServiceImpl implements CourseService {
      * @return Course对象
      */
     @Override
-    public Course getCourseById(int id) {
+    public List<Course> getCourseById(int id) {
         return courseMapper.getCourseById(id);
     }
 }

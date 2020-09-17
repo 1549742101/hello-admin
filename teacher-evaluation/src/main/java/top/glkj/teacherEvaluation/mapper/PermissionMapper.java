@@ -3,6 +3,8 @@ package top.glkj.teacherEvaluation.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import top.glkj.teacherEvaluation.bean.Permission;
 
+import java.util.List;
+
 /**
  *
  * 获取权限
@@ -14,8 +16,8 @@ public interface PermissionMapper {
     /**
      *查看当前用户的权限
      * @param id 用户传入的id
-     * @return   Permission
+     * @return   list
      */
-    public Permission selectPermission(int id);
+    public List<Permission> selectPermission(int id);
 
 }

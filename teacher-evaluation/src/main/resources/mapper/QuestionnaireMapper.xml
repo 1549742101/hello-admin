@@ -5,17 +5,18 @@
 	namespace：命名空间，其值为某一个dao层类的具体路径
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.QuestionnaireMapper">
-
-    <select id="selectQuestionnaire"  resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
-            SELECT p.id,
-                   p.name,
-                   p.sort,
-                   p.weights,
-                   p.parent_id,
-                   p.type_id
-			       FROM questionnaire AS p;
+    <resultMap id="BaseQuestionnaire" type="top.glkj.teacherEvaluation.bean.Questionnaire">
+        <id column="id" property="id"></id>
+        <result column="name" property="queName"></result>
+        <result column="sort" property="sort"></result>
+        <result column="weights" property="weights"></result>
+        <result column="type_id" property="typeId"></result>
+        <result column="parent_id" property="parentId"></result>
+    </resultMap>
+    <select id="selectQuestionnaire"  resultMap="BaseQuestionnaire">
+            SELECT * FROM questionnaire
     </select>
-    <select id="selectQuestionnaireById"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
+    <select id="selectQuestionnaireById"  parameterType="int" resultMap="BaseQuestionnaire">
             SELECT p.id,
                    p.name,
                    p.sort,
@@ -25,7 +26,7 @@
 			       FROM questionnaire AS p WHERE p.id=#{id};
     </select>
 
-    <select id="selectQuestionnaireByTypeId"  parameterType="int" resultType="top.glkj.teacherEvaluation.bean.Questionnaire">
+    <select id="selectQuestionnaireByTypeId"  parameterType="int" resultMap="BaseQuestionnaire">
             SELECT p.id,
                    p.name,
                    p.sort,
@@ -36,14 +37,14 @@
     </select>
 
     <insert id="addQuestionnaire" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
-        INSERT INTO Questionnaire(name,sort,weights,parent_id,type_id) VALUE (#{queName},#{sort},#{weights},#{parentId},#{typeId})
+        INSERT INTO questionnaire(name,sort,weights,parent_id,type_id) VALUE (#{queName},#{sort},#{weights},#{parentId},#{typeId})
     </insert>
 
     <update id="updateUserById" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
-        UPDATE Questionnaire SET (name = #{queName},sort = #{sort},weights = #{weights},parent_id = #{parentId},type_id = #{typeId}) where id = #{id}
+        UPDATE questionnaire SET name = #{queName},sort = #{sort},weights = #{weights},parent_id = #{parentId},type_id = #{typeId} where id = #{id}
     </update>
 
     <delete id="deleteQuestionnaire" parameterType="int">
-        DELETE FROM Questionnaire WHERE id = #{id}
+        DELETE FROM questionnaire WHERE id = #{id}
     </delete>
 </mapper>

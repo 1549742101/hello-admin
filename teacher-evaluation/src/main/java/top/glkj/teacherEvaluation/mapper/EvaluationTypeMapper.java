@@ -1,6 +1,9 @@
 package top.glkj.teacherEvaluation.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.glkj.teacherEvaluation.bean.EvaluationType;
+
+import java.util.List;
 
 /**
  * @author ：高铭
@@ -12,13 +15,13 @@ public interface EvaluationTypeMapper {
      *  查询所有类型
      * @return  EvaluationType
      */
-    public EvaluationType getEvaluationType();
+    public List<EvaluationType> getEvaluationType();
     /**
      *  根据查询评教类型
      * @param id id
      * @return  EvaluationType
      */
-    public EvaluationType getEvaluationTypeById(int id);
+    public List<EvaluationType> getEvaluationTypeById(int id);
 
     /**
      * 新增一个评教类型

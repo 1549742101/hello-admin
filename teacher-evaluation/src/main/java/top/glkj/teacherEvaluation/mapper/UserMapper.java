@@ -14,7 +14,7 @@ public interface UserMapper {
     /**
      *根据工号或者学号进行登录
      * @param loginName
-     * @return
+     * @return User
      */
     public User getUerByName(String loginName);
 

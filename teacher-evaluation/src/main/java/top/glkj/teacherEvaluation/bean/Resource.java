@@ -33,6 +33,10 @@ public class Resource extends BaseEntity{
      */
     private int level;
     /**
+     * 父级id
+     */
+    private int parentId;
+    /**
      * 当前目录级别下的子菜单
      */
     private Set<Resource> children;
