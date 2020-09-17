@@ -6,6 +6,7 @@ import top.glkj.teacherEvaluation.bean.EvaluationType;
  * @author ：高铭
  * @date ：Created in 2020/9/16 16:26
  */
+@Mapper
 public interface EvaluationTypeMapper {
     /**
      *  查询所有类型

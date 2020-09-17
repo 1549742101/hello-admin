@@ -1,11 +1,13 @@
 package top.glkj.teacherEvaluation.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.glkj.teacherEvaluation.bean.Questionnaire;
 
 /**
  * @author ：高铭
  * @date ：Created in 2020/9/16 11:56
  */
+@Mapper
 public interface QuestionnaireMapper {
     /**
      * 根据id查询评教问卷表题目

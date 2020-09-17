@@ -1,5 +1,6 @@
 package top.glkj.teacherEvaluation.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import top.glkj.teacherEvaluation.bean.Permission;
 
 /**
@@ -8,6 +9,7 @@ import top.glkj.teacherEvaluation.bean.Permission;
  * @author ：高铭
  * @date ：Created in 2020/9/16 10:16
  */
+@Mapper
 public interface PermissionMapper {
     /**
      *查看当前用户的权限
