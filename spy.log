@@ -47,3 +47,6 @@
 1600152614769|77|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600152685342|67|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600152685423|68|statement|connection 0|SELECT * FROM user WHERE login_name = ?|SELECT * FROM user WHERE login_name = '179000312'
+1600326157729|81|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600326206038|70|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = 'loonglove' limit 1;
+1600326532218|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL

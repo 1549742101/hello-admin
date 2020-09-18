@@ -1,7 +1,6 @@
 package top.glkj.teacherEvaluation.utils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -10,8 +9,8 @@ import java.util.concurrent.atomic.AtomicReference;
  * @version : 0.0.1
  * @date :2020/9/16 11:12
  */
-public class DefaultUtils {
-    private static AtomicReference<StringBuffer> sb = new AtomicReference<>(new StringBuffer());
+public final class DefaultUtils {
+    private static final AtomicReference<StringBuffer> sb = new AtomicReference<>(new StringBuffer());
     public static String arrayToString(int ...a){
         for (int j : a) {
             sb.get().append(j);
@@ -34,7 +33,7 @@ public class DefaultUtils {
             sb.get().append(",");
         }
         sb.get().delete(sb.get().length()-1, sb.get().length());
-        return arrayToString();
+        return sb.toString();
     }
     public static List<Integer> stringToList(String s){
         String[] split = s.split(",");

@@ -1,10 +1,3 @@
-/*
- * @author ：高铭
- * @date ：Created in 2020/9/14 9:38
- * @description： 自定义redis配置
- * @modified By：
- * @version: $
- */
 package top.glkj.teacherEvaluation.config;
 
 import org.springframework.cache.interceptor.KeyGenerator;
@@ -20,7 +13,10 @@ import top.glkj.teacherEvaluation.bean.User;
 import java.lang.reflect.Method;
 import java.net.UnknownHostException;
 import java.util.Arrays;
-
+/**
+ * @author ：高铭
+ * @date ：Created in 2020/9/14 9:38
+ */
 /**
  * @author 高铭
  */

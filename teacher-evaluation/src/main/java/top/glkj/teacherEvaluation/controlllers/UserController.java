@@ -1,10 +1,4 @@
-/**
- * @author ：高铭
- * @date ：Created in 2020/9/14 10:12
- * @description：
- * @modified By：
- * @version: $
- */
+
 package top.glkj.teacherEvaluation.controlllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +6,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import top.glkj.teacherEvaluation.bean.User;
 import top.glkj.teacherEvaluation.services.UserService;
 
+/**
+ * @author ：高铭
+ * @date ：Created in 2020/9/14 10:12
+ * @version 0.0.2
+ */
 @Controller
+@SessionAttributes(names = {"user"})
 public class UserController {
     @Autowired
     UserService userService;
@@ -47,9 +49,13 @@ public class UserController {
     @RequestMapping("/user/login")
     public String getUer(User user,Model model){
         User user1 = userService.getUerByName(user.getLoginName());
-        System.out.println(user1.getUserName());
-        model.addAttribute("u",user1);
-        return "index";
+        if (user1!=null && userService.login(user1,user.getPassWord())){
+            model.addAttribute("user",user1);
+            return "index";
+        }else {
+            model.addAttribute("msg","用户名或密码错误");
+            return "login";
+        }
     }
 
     /**
@@ -60,7 +66,7 @@ public class UserController {
      */
     @RequestMapping("/user/reg")
     public String insertUer(User user, Model model){
-        int rs = userService.insertUserByName(user);
+        boolean rs = userService.addUser(user);
         return "login";
     }
 
@@ -72,7 +78,7 @@ public class UserController {
      */
     @RequestMapping("/user/update")
     public String updateUer(User user, Model model){
-        int rs = userService.updateUserByName(user);
+        boolean rs = userService.updateUser(user);
         return "index";
     }
 
@@ -84,7 +90,7 @@ public class UserController {
      */
     @RequestMapping("/user/del")
     public String delUer(int id, Model model){
-        int rs = userService.deleteUser(id);
+        boolean rs = userService.deleteUser(id);
         return "index";
     }
 

@@ -17,7 +17,7 @@ import java.util.Set;
  * | ----------- | ---------------------- | ------------------------------ |
  * | id          | int                    | 用户标识                       |
  * | login_name  | varchar(20)            | 用户工号                       |
- * | management  | varchar(3)             | 账号管理（暂停、禁用、开启）   |
+ * | management  | int           | 账号管理（暂停、禁用、开启）   |
  * | user_name   | varchar(20)            | 用户名                         |
  * | login_pass  | varchar(100)           | 用户密码                       |
  * | user_phone  | int                    | 中间表id（改动）               |
@@ -61,6 +61,10 @@ public class User extends BaseEntity{
      */
     private String userPhone;
     /**
+     * 学院id
+     */
+    private int collegeId;
+    /**
      * 根据数据库college_id绑定学院
      */
     private College college;
@@ -69,4 +73,9 @@ public class User extends BaseEntity{
      * user_per关联表对应查询
      */
     private Set<Permission> permissions;
+
+    public void setCollegeById(){
+        this.college = new College();
+        this.college.setId(this.collegeId);
+    }
 }
