@@ -12,8 +12,8 @@ import top.glkj.teacherEvaluation.bean.User;
  */
 @Controller
 public class HelloController {
-    @RequestMapping({"/","/index","/index.html"})
+   /* @RequestMapping({"/","/index","/index.html"})
     public String hello(@RequestBody User user){
         return "index";
-    }
+    }*/
 }

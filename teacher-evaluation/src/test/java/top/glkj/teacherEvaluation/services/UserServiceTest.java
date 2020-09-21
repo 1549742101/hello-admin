@@ -30,6 +30,7 @@ public class UserServiceTest {
 
     @Test
     public void addUser() {
+
     }
 
     @Test
@@ -38,6 +39,8 @@ public class UserServiceTest {
 
     @Test
     public void deleteUser() {
+        assertTrue(userService.deleteUser(3));
+        assertTrue(userService.deleteUser(4));
     }
 
     @Test
@@ -50,6 +53,8 @@ public class UserServiceTest {
 
     @Test
     public void resetPassWord() {
+        assertTrue(userService.resetPassWord(1,"123456"));
+        assertTrue(userService.resetPassWord(2,"123456"));
     }
 
     @Test
@@ -58,5 +63,6 @@ public class UserServiceTest {
 
     @Test
     public void testGetUsersByDate() {
+
     }
 }

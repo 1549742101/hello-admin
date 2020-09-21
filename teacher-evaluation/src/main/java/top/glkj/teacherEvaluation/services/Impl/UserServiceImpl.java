@@ -75,6 +75,17 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
+     * 根据id删除用户
+     *
+     * @param id 用户编号
+     * @return 删除成功：true 删除失败：false
+     */
+    @Override
+    public boolean removeUser(int id) {
+        return userMapper.removeUserById(id)>0;
+    }
+
+    /**
      * 判断用户登录
      *
      * @param user     根据用户名查询出来的用户
@@ -120,7 +131,7 @@ public class UserServiceImpl implements UserService {
         } catch (NoSuchAlgorithmException e) {
             log.info(e.getMessage());
         }
-        return userMapper.updateUserPassWord(id,password)>1;
+        return userMapper.updateUserPassWord(id,password)>0;
     }
 
     @Override

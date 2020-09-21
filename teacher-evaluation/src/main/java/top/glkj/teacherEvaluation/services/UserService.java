@@ -45,7 +45,15 @@ public interface UserService {
      * @param id 用户编号
      * @return 删除成功：true 删除失败：false
      */
+    @Deprecated
     public boolean deleteUser(int id);
+
+    /**
+     * 根据id删除用户
+     * @param id 用户编号
+     * @return 删除成功：true 删除失败：false
+     */
+    public boolean removeUser(int id);
 
     /**
      * 判断用户登录
