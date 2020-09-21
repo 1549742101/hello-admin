@@ -14,7 +14,7 @@ import top.glkj.teacherEvaluation.services.UserService;
  * @version 0.0.2
  */
 @Controller
-@SessionAttributes(names = {"user"})
+@SessionAttributes(names = {"user"},types = User.class)
 public class UserController {
     @Autowired
     UserService userService;
@@ -39,12 +39,15 @@ public class UserController {
     }
 
     /**
-     *
+     * 根据type权限确定评教类型，并跳转到相应的评教页面
      * @return Student_appraisal
      */
-    @GetMapping("/user/ping")
-    public String pingJiao(){
-        return "Student_appraisal";
+    @GetMapping("/user/appraisal")
+    public String appraisal(@SessionAttribute("user") User user){
+//        if(user.getUserType)
+        System.out.println(user.getLoginName());
+        System.out.println(user.getLoginName());
+        return "Student_appraisal"; // return "Teacher_appraisal";
     }
 
     /**
@@ -57,7 +60,7 @@ public class UserController {
     public String getUer(User user,Model model){
         User user1 = userService.getUerByName(user.getLoginName());
         if (user1!=null && userService.login(user1,user.getLoginPass())){
-            model.addAttribute("user",user1);
+            model.addAttribute("u",user1);
             return "index";
         }else {
             model.addAttribute("msg","用户名或密码错误");

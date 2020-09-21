@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+ -->
+<mapper namespace="top.glkj.teacherEvaluation.mapper.QuestionPermissionMapper">
+    <resultMap id="BaseQuestionPermission" type="top.glkj.teacherEvaluation.bean.QuestionPermission">
+        <id column="id" property="id"></id>
+        <result column="answer" property="answer"></result>
+        <result column="sort" property="sort"></result>
+        <result column="score" property="score"></result>
+        <result column="question_id" property="questionId"></result>
+    </resultMap>
+    <select id="selectQuestionPermission"  resultMap="BaseQuestionPermission">
+            SELECT * FROM question_permission
+    </select>
+    <select id="selectQuestionPermissionById"  parameterType="int" resultMap="BaseQuestionPermission">
+            SELECT p.id,
+                   p.answer,
+                   p.sort,
+                   p.score,
+                   p.question_id
+			       FROM question_permission AS p WHERE p.id=#{id};
+    </select>
+
+    <select id="selectQuestionPermissionByQuestionId"  parameterType="int" resultMap="BaseQuestionPermission">
+            SELECT p.id,
+                   p.answer,
+                   p.sort,
+                   p.score,
+                   p.question_id
+			       FROM question_permission AS p WHERE p.question_id=#{questionId};
+    </select>
+
+    <insert id="addQuestionPermission" parameterType="top.glkj.teacherEvaluation.bean.QuestionPermission">
+        INSERT INTO question_permission(answer,sort,score,question_id) VALUE (#{answer},#{sort},#{score},#{questionId})
+    </insert>
+
+    <update id="updatedQuestionPermissionById" parameterType="top.glkj.teacherEvaluation.bean.QuestionPermission">
+        UPDATE question_permission SET answer = #{answer},sort = #{sort},score = #{score},question_id = #{questionId} where id = #{id}
+    </update>
+
+    <delete id="deleteQuestionPermission" parameterType="int">
+        DELETE FROM question_permission WHERE id = #{id}
+    </delete>
+</mapper>

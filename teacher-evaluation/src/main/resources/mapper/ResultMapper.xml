@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+ -->
+<mapper namespace="top.glkj.teacherEvaluation.mapper.ResultMapper">
+    <resultMap id="BaseResult" type="top.glkj.teacherEvaluation.bean.Result">
+<!--        <id column="id" property="teacher"></id>-->
+        <result column="type" property="type"></result>
+        <result column="total_score" property="totalScore"></result>
+        <result column="date" property="date"></result>
+        <result column="batch" property="batch"></result>
+    </resultMap>
+    <select id="getAllResult" resultMap="BaseResult">
+        SELECT id,type,total_score,date,batch FROM res
+    </select>
+
+    <select id="getResultById"  parameterType="int" resultMap="BaseResult">
+	SELECT id,type,total_score,date,batch FROM res WHERE id = #{id}
+    </select>
+
+    <select id="getResultByType"  parameterType="int" resultMap="BaseResult">
+	SELECT id,type,total_score,date,batch FROM res WHERE type = #{type}
+    </select>
+
+    <select id="getResultByTotalScore"  parameterType="int" resultMap="BaseResult">
+	SELECT id,type,total_score,date,batch FROM res WHERE total_score = #{total_score}
+    </select>
+
+    <select id="getResultByBatch"  parameterType="int" resultMap="BaseResult">
+	SELECT id,type,total_score,date,batch FROM res WHERE batch = #{batch}
+    </select>
+
+    <insert id="insertResult" parameterType="top.glkj.teacherEvaluation.bean.Result">
+        INSERT INTO res(id,type,total_score,date,batch) VALUE (#{id},#{type},#{total_score},#{date},#{batch})
+    </insert>
+
+    <update id="updateResultById" parameterType="top.glkj.teacherEvaluation.bean.Result">
+        UPDATE res SET (id = #{id},type = #{type},total_score = #{total_score},date = #{date},batch = #{batch},})
+        where id = #{id}
+    </update>
+
+    <delete id="deleteResult">
+    DELETE FROM res WHERE id = #{id}
+    </delete>
+</mapper>

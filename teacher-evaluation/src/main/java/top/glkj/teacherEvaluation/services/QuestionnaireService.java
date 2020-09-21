@@ -40,7 +40,7 @@ public interface QuestionnaireService {
      * @param questionnaire addQuestionnaire对象
      * @return boolean
      */
-    public boolean updateUserById(Questionnaire questionnaire);
+    public boolean updateQuestionnaireById(Questionnaire questionnaire);
 
     /**
      *删除一个题目

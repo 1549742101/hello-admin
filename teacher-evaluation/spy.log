@@ -40,6 +40,238 @@
 1600347523379|32|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
 1600347543648|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600347545839|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600394858693|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600394868891|39|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600394939077|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600394941161|35|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600394993993|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600394996474|39|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395125033|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395131992|35|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395133965|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395137046|39|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395581229|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395584437|33|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395735093|61|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395737169|37|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395908546|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395910598|35|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396639097|66|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396642213|37|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396697996|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396706585|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396720083|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396726953|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396741928|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396748845|35|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396758663|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396767048|37|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600396769123|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600396775081|33|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600397250132|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600397252921|41|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600397285749|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600397288346|36|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600397470967|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600397473188|46|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600398922016|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600398928749|46|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600398961727|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600398964326|74|statement|connection 0|INSERT INTO questionnaire(name,sort,weights,parent_id,type_id) VALUE (?,?,?,?,?)|INSERT INTO questionnaire(name,sort,weights,parent_id,type_id) VALUE ('测试题目',20,0.15,0,1)
+1600398989632|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600591513972|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600591556409|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600591558592|38|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600591738490|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600591740663|36|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600591777752|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600591780373|37|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600591983105|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600592035492|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600592037841|71|statement|connection 0|INSERT INTO question_permission(answer,sort,score,question_id) VALUE (?,?,?,?)|INSERT INTO question_permission(answer,sort,score,question_id) VALUE ('测试B',10,80.0,1)
+1600592079465|53|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600592081647|73|statement|connection 0|UPDATE question_permission SET answer = ?,sort = ?,score = ?,question_id = ? where id = ?|UPDATE question_permission SET answer = '测试更新B',sort = 10,score = 80.0,question_id = 1 where id = 0
+1600592148386|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600592150825|76|statement|connection 0|UPDATE question_permission SET answer = ?,sort = ?,score = ?,question_id = ? where id = ?|UPDATE question_permission SET answer = '测试更新B',sort = 10,score = 80.0,question_id = 1 where id = 4
+1600592186294|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600592188558|79|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 4
+1600593949257|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600593951680|34|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600597704004|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600597710771|37|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
+1600597745748|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600597836147|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600597996391|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598096501|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598103345|33|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600598128369|53|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598460604|52|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598468079|40|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600598504235|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598567365|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598663795|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598738257|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598745075|37|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600598761464|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600598969650|58|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600599015642|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600599022718|38|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600599051871|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600599295623|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600599302443|34|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600599733530|60|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600599741016|40|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600602852724|52|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600603305090|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600605045393|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600605053353|37|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600605076786|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600605154777|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600605163781|37|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600605177598|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600606023174|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600606031211|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600607312831|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600607324451|39|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600607393421|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600607831363|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608034454|55|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608046160|37|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600608167785|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608208545|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608211530|38|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600608254809|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608258579|35|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600608345335|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608348297|38|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600608417972|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608421586|36|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600608490263|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600608500724|37|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600608542818|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600609992737|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600609996475|35|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600610014501|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600610017616|39|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600610073829|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600610081913|35|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600610098782|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600610179569|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600610380775|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600610389885|38|statement|connection 0|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = ?;|SELECT p.id,                    p.name,                    p.description 			       FROM permission as p LEFT JOIN user_per as u  on p.id = u.permissions_id WHERE u.user_id = 1;
+1600611942177|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600611953288|39|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600612011424|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612042456|57|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612052405|37|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600612222283|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612230651|84|statement|connection 0|INSERT INTO question_permission(answer,sort,score,question_id) VALUE (?,?,?,?)|INSERT INTO question_permission(answer,sort,score,question_id) VALUE ('测试B',10,80.0,1)
+1600612347881|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612352210|73|statement|connection 0|UPDATE question_permission SET answer = ?,sort = ?,score = ?,question_id = ? where id = ?|UPDATE question_permission SET answer = '测试更新B',sort = 10,score = 80.0,question_id = 1 where id = 5
+1600612407498|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612416050|76|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 5
+1600612490250|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612541760|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612588493|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612637298|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612641144|81|statement|connection 0|UPDATE question_permission SET answer = ?,sort = ?,score = ?,question_id = ? where id = ?|UPDATE question_permission SET answer = '测试更新B',sort = 10,score = 80.0,question_id = 1 where id = 3
+1600612685870|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612813948|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612817754|77|statement|connection 0|INSERT INTO question_permission(answer,sort,score,question_id) VALUE (?,?,?,?)|INSERT INTO question_permission(answer,sort,score,question_id) VALUE ('测试AB',10,80.0,1)
+1600612894105|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600612898619|85|statement|connection 0|INSERT INTO question_permission(answer,sort,score,question_id) VALUE (?,?,?,?)|INSERT INTO question_permission(answer,sort,score,question_id) VALUE ('测试AB',10,80.0,1)
+1600653693976|104|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600653696598|77|statement|connection 0|SELECT id,type,total_score,date,batch FROM res|SELECT id,type,total_score,date,batch FROM res
+1600653803353|76|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600653977159|76|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600653983971|66|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600654051829|95|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654141333|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654481963|90|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654487997|71|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
+1600654514033|88|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654520889|69|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600654542278|93|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654568537|81|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654719954|86|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654776754|60|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655685542|54|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655692071|47|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600655725966|87|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655732683|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600655763488|62|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655769549|328|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600655793362|91|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655795939|136|statement|connection 0|INSERT INTO question_permission(answer,sort,score,question_id) VALUE (?,?,?,?)|INSERT INTO question_permission(answer,sort,score,question_id) VALUE ('测试AB',10,80.0,1)
+1600655819694|84|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655821912|116|statement|connection 0|UPDATE question_permission SET answer = ?,sort = ?,score = ?,question_id = ? where id = ?|UPDATE question_permission SET answer = '测试更新B',sort = 10,score = 80.0,question_id = 1 where id = 3
+1600655842119|78|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655848762|134|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 5
+1600655891884|76|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600655897913|137|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 6
+1600656135112|82|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657301181|62|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657329558|79|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657352205|78|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657390866|68|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657504063|83|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657511030|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600657538695|62|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657544774|46|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600657627581|78|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657633408|54|statement|connection 0|SELECT * FROM question_permission|SELECT * FROM question_permission
+1600657777990|90|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657784288|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600657873315|79|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600657879675|68|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600658166500|88|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600658475194|81|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600658481751|58|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=2;
+1600658789455|78|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600658797133|120|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 8
+1600658859615|78|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600658867844|141|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 1
+1600659027048|71|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600659033642|97|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 2
+1600659065626|66|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600659072474|55|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600659085597|58|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600659093315|48|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=2;
+1600659109175|376|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600659116654|611|statement|connection 0|DELETE FROM question_permission WHERE id = ?|DELETE FROM question_permission WHERE id = 2
+1600660080403|88|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600660087114|68|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600660133799|67|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600660140222|66|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=3;
+1600660158215|370|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600660652430|69|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600660936546|76|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600661074853|82|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600662257030|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600662308190|73|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600662314369|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600662334901|94|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600662470288|77|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665315393|81|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665322234|55|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600665346858|81|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665384918|90|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665391172|68|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600665447693|85|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665510010|79|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665789146|95|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600665795504|69|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600665851637|91|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600666315805|56|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600666321831|46|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=2;
+1600666377802|80|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600666383894|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
+1600666890195|84|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600666896568|56|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=1;
+1600666936714|80|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600666942931|57|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.question_id=2;
+1600667014796|80|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600667020623|55|statement|connection 0|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=?;|SELECT p.id,                    p.answer,                    p.sort,                    p.score,                    p.question_id 			       FROM question_permission AS p WHERE p.id=1;
 1600395510541|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600395611078|74|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600395613374|66|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;

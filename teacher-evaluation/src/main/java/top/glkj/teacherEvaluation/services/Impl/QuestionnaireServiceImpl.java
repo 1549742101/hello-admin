@@ -1,6 +1,8 @@
 package top.glkj.teacherEvaluation.services.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import top.glkj.teacherEvaluation.bean.Questionnaire;
 import top.glkj.teacherEvaluation.mapper.QuestionnaireMapper;
@@ -18,6 +20,10 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
     @Autowired
     QuestionnaireMapper questionnaireMapper;
 
+    @Autowired
+    RedisTemplate<Object, Questionnaire> questionnaireRedisTemplate;
+
+    List<Questionnaire> questionnaires;
     /**
      * 根据id查询评教问卷表题目
      *
@@ -25,6 +31,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
+    @Cacheable(cacheNames = "Questionnaire",key = "#id")
     public List<Questionnaire> selectQuestionnaireById(int id) {
         return questionnaireMapper.selectQuestionnaireById(id);
     }
@@ -36,8 +43,9 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
+    @Cacheable(cacheNames = "Questionnaire",key = "T(String).valueOf(#typeId).concat('-').concat('typeId')")
     public List<Questionnaire> selectQuestionnaireByTypeId(int typeId) {
-        return questionnaireMapper.selectQuestionnaireByTypeId(typeId);
+        return questionnaireMapper.selectQuestionnaire();
     }
 
     /**
@@ -46,6 +54,7 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return Questionnaire
      */
     @Override
+    @Cacheable(cacheNames = "Questionnaire")
     public List<Questionnaire> selectQuestionnaire() {
         return questionnaireMapper.selectQuestionnaire();
     }
@@ -68,8 +77,8 @@ public class QuestionnaireServiceImpl implements QuestionnaireService {
      * @return boolean
      */
     @Override
-    public boolean updateUserById(Questionnaire questionnaire) {
-        return questionnaireMapper.updateUserById(questionnaire);
+    public boolean updateQuestionnaireById(Questionnaire questionnaire) {
+        return questionnaireMapper.updateQuestionnaireById(questionnaire);
     }
 
     /**

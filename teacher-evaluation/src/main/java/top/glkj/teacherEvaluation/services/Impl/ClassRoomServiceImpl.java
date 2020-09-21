@@ -16,7 +16,7 @@ import java.util.List;
 @Service
 public class ClassRoomServiceImpl implements ClassRoomService {
     @Autowired
-   ClassRoomMapper ClassRoomMapper;
+   ClassRoomMapper classRoomMapper;
 
     /**
      * 获取所有班级（无条件获取）
@@ -25,7 +25,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
      */
     @Override
     public List<ClassRoom> getAllClassRoom() {
-        return ClassRoomMapper.getAllClassRoom();
+        return classRoomMapper.getAllClassRoom();
     }
 
     /**
@@ -34,7 +34,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
      */
     @Override
     public List<ClassRoom> getClassRoomById(int id) {
-        return ClassRoomMapper.getClassRoomById(id);
+        return classRoomMapper.getClassRoomById(id);
     }
 
     /**
@@ -43,7 +43,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
      */
     @Override
     public boolean addClassRoom(ClassRoom classroom) {
-        return ClassRoomMapper.addClassRoom(classroom);
+        return classRoomMapper.addClassRoom(classroom);
     }
 
     /**
@@ -52,7 +52,7 @@ public class ClassRoomServiceImpl implements ClassRoomService {
      */
     @Override
     public boolean updateClassRoomById(ClassRoom classroom) {
-        return ClassRoomMapper.updateClassRoomById(classroom);
+        return classRoomMapper.updateClassRoomById(classroom);
     }
 
     /**
@@ -63,6 +63,6 @@ public class ClassRoomServiceImpl implements ClassRoomService {
      */
     @Override
     public boolean deleteClassRoom(int id) {
-        return ClassRoomMapper.deleteClassRoom(id);
+        return classRoomMapper.deleteClassRoom(id);
     }
 }

@@ -40,7 +40,7 @@
         INSERT INTO questionnaire(name,sort,weights,parent_id,type_id) VALUE (#{queName},#{sort},#{weights},#{parentId},#{typeId})
     </insert>
 
-    <update id="updateUserById" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
+    <update id="updateQuestionnaireById" parameterType="top.glkj.teacherEvaluation.bean.Questionnaire">
         UPDATE questionnaire SET name = #{queName},sort = #{sort},weights = #{weights},parent_id = #{parentId},type_id = #{typeId} where id = #{id}
     </update>
 
