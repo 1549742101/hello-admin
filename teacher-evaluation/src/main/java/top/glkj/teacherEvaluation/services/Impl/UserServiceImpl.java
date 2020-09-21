@@ -1,10 +1,10 @@
 
 package top.glkj.teacherEvaluation.services.Impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.domain.Page;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import top.glkj.teacherEvaluation.bean.User;
@@ -31,9 +31,12 @@ public class UserServiceImpl implements UserService {
     RedisTemplate<Object, User> userRedisTemplate;
 
     @Override
-    @Cacheable(cacheNames = "user",key = "#loginName")
     public User getUerByName(String loginName) {
-        return userMapper.getUserByName(loginName);
+        if (loginName!=null){
+            return userMapper.getUserByName(loginName);
+        }else {
+            return null;
+        }
     }
 
     /**
@@ -43,14 +46,14 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public List<User> getAllUser() {
-        return null;
+        return userMapper.getAllUser();
     }
 
     @Override
     public boolean addUser(User user) {
-        if (user.getLoginName()!=null&&user.getPassWord()!=null){
+        if (user.getLoginName()!=null&&user.getLoginPass()!=null){
             try {
-                user.setPassWord(CodeUtils.getEncryptedPwd(user.getPassWord()));
+                user.setLoginPass(CodeUtils.getEncryptedPwd(user.getLoginPass()));
             } catch (NoSuchAlgorithmException e) {
                 log.info(e.getMessage());
                 return false;
@@ -79,9 +82,10 @@ public class UserServiceImpl implements UserService {
      * @return 根据用户名获取用户
      */
     @Override
+
     public boolean login(User user, String password) {
         try {
-            if (CodeUtils.validPassword(password,user.getPassWord())){
+            if (user!=null&&CodeUtils.validPassword(password,user.getLoginPass())){
                 return true;
             }else {
                 return false;
@@ -93,8 +97,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Page<User> getAllUserByPage(int page, int size) {
-        return null;
+    public PageInfo<User> getAllUserByPage(int page, int size) {
+        PageHelper.startPage(page, size);
+        List<User> lists = getAllUser();
+        return new PageInfo<User>(lists);
     }
 
     /**
@@ -106,6 +112,33 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean resetPassWord(int id, String password) {
-        return false;
+        try {
+            if (password==null){
+                return false;
+            }
+            password = CodeUtils.getEncryptedPwd(password);
+        } catch (NoSuchAlgorithmException e) {
+            log.info(e.getMessage());
+        }
+        return userMapper.updateUserPassWord(id,password)>1;
+    }
+
+    @Override
+    public PageInfo<User> getUsersByDate(String startDate, String endDate, int page, int size) {
+        PageHelper.startPage(page, size);
+        List<User> lists = getUsersByDate(startDate,endDate);
+        return new PageInfo<User>(lists);
+    }
+
+    /**
+     * 模糊查询
+     *
+     * @param startDate 查询内容
+     * @param endDate    查询类型
+     * @return 查询结果
+     */
+    @Override
+    public List<User> getUsersByDate(String startDate, String endDate) {
+        return userMapper.getUsersByDate(startDate,endDate);
     }
 }

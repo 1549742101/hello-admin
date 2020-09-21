@@ -20,7 +20,7 @@ import java.util.Set;
  * | management  | int           | 账号管理（暂停、禁用、开启）   |
  * | user_name   | varchar(20)            | 用户名                         |
  * | login_pass  | varchar(100)           | 用户密码                       |
- * | user_phone  | int                    | 中间表id（改动）               |
+ * | user_phone  | int                    | 用户手机号              |
  * | college_id  | int                    | 一个用户绑定一个学院（多对一） |
  * | create_man   | varchar                | 创建者（待定）                 |
  * | create_time  | datetime               | 创建时间（待定）               |
@@ -34,7 +34,7 @@ import java.util.Set;
 public class User extends BaseEntity{
     private int id;
     private String loginName;
-    private String passWord;
+    private String loginPass;
     private String userName;
     /**
      * 账号状态

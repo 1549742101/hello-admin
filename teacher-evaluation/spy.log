@@ -40,84 +40,14 @@
 1600347523379|32|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
 1600347543648|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600347545839|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
-1600397865171|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600400341648|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600400348512|46|statement|connection 0|SELECT credit,description,id,name,start_time,end_time FROM class_room;|SELECT credit,description,id,name,start_time,end_time FROM class_room;
-1600649420316|52|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600649503850|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600649656035|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650281719|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650400327|52|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650623725|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650626005|82|statement|connection 0|INSERT INTO class_room(counselor_id,name，profession,col_id) VALUE (?,?,?,?)|INSERT INTO class_room(counselor_id,name，profession,col_id) VALUE (8001,'测试班','软件专业',1)
-1600650697701|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650700672|68|statement|connection 0|UPDATE questionnaire SET name = ?,sort = ?,weights = ?,parent_id = ?,type_id = ? where id = ?|UPDATE questionnaire SET name = '测试题目2',sort = 200,weights = 0.85,parent_id = 1,type_id = 10 where id = 6
-1600650711982|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650714092|77|statement|connection 0|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (?,?,?,?)|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (8001,'测试班','软件专业',1)
-1600650781413|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650783533|72|statement|connection 0|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (?,?,?,?)|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (8002,'测试2班','计算机专业',1)
-1600650894656|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600650896806|87|statement|connection 0|UPDATE class_room SET (counselor_id = ?,name = ?,profession = ?,col_id = ?)         where id = ?|UPDATE class_room SET (counselor_id = 8002,name = '测试1班',profession = '计算机专业',col_id = 1)         where id = 1
-1600651110609|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600651112729|79|statement|connection 0|UPDATE class_room SET (counselor_id = ?,name = ?,profession = ?,col_id = ?)         where id = ?|UPDATE class_room SET (counselor_id = 8002,name = '测试1班',profession = '计算机专业',col_id = 2)         where id = 1
-1600652171680|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652173885|80|statement|connection 0|UPDATE class_room SET (counselor_id = ?,name = ?,profession = ?,col_id = ?)         where id = ?|UPDATE class_room SET (counselor_id = 8002,name = '测试1班',profession = '计算机专业',col_id = 2)         where id = 1
-1600652218094|48|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652220345|67|statement|connection 0|UPDATE class_room SET counselor_id = ?,name = ?,profession = ?,col_id = ?         where id = ?|UPDATE class_room SET counselor_id = 8002,name = '测试1班',profession = '计算机专业',col_id = 2         where id = 1
-1600652263823|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652266105|70|statement|connection 0|UPDATE class_room SET counselor_id = ?,name = ?,profession = ?,col_id = ?         where id = ?|UPDATE class_room SET counselor_id = 8001,name = '测试2班',profession = '软件专业',col_id = 1         where id = 2
-1600652306486|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652308626|73|statement|connection 0|UPDATE class_room SET counselor_id = ?,name = ?,profession = ?,col_id = ?         where id = ?|UPDATE class_room SET counselor_id = 8002,name = '测试2班',profession = '软件专业',col_id = 2         where id = 2
-1600652337675|47|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652339834|69|statement|connection 0|UPDATE class_room SET counselor_id = ?,name = ?,profession = ?,col_id = ?         where id = ?|UPDATE class_room SET counselor_id = 8001,name = '测试1班',profession = '软件专业',col_id = 1         where id = 1
-1600652363758|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652366078|70|statement|connection 0|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (?,?,?,?)|INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (8003,'测试3班','计算机专业',3)
-1600652398935|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652401566|76|statement|connection 0|UPDATE class_room SET counselor_id = ?,name = ?,profession = ?,col_id = ?         where id = ?|UPDATE class_room SET counselor_id = 8002,name = '测试2班',profession = '计算机专业',col_id = 2         where id = 2
-1600652515114|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652517277|69|statement|connection 0|DELETE FROM class_room WHERE id = ?|DELETE FROM class_room WHERE id = 6
-1600652527263|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652529374|69|statement|connection 0|DELETE FROM class_room WHERE id = ?|DELETE FROM class_room WHERE id = 3
-1600652542631|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652544931|36|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600652656709|49|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652658827|40|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600652672276|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652674673|43|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600652779917|41|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652783374|75|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600652785164|33|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600653056913|42|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653056972|35|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600653066554|46|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653068808|40|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 2
-1600653313295|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653315401|35|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=1;
-1600653388802|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653391004|36|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room;|SELECT id,counselor_id,name,profession,col_id FROM class_room;
-1600653730605|40|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653732716|31|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=1;
-1600653825280|55|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653828730|43|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 1
-1600653840796|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653843440|35|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=1;
-1600653889790|41|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600653891901|34|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=1;
-1600654070926|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600654073177|42|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 1
-1600654621104|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600654623196|37|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 1
-1600654659108|51|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600654661268|37|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 1
-1600654677840|41|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600654680086|34|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 2
-1600654907253|40|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600654909365|32|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 2
-1600655167566|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600655169786|34|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 2
-1600655274827|43|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600655278067|35|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
-1600655293134|50|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600655295283|39|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.type_id=1;
-1600655335759|45|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
-1600655338228|35|statement|connection 0|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = ?|SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = 2
+1600395510541|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395611078|74|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395613374|66|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600395779415|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395781437|60|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600395781570|116|statement|connection 0|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE (?,?,?,?,?,?,?         ,?,?         );|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE ('179000312',0,'高铭','123456','15823151055',1,'高铭'         ,'15-九月-20',0         );
+1600532199563|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600532201832|36|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600532201923|75|statement|connection 0|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE (?,?,?,?,?,?,?         ,?,?         );|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE ('179000312',0,'高铭','123456','15823151055',1,'高铭'         ,'15-九月-20',0         );
+1600654040790|98|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654043399|58|statement|connection 0|SELECT * FROM user;|SELECT * FROM user;

@@ -4,10 +4,7 @@ package top.glkj.teacherEvaluation.controlllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttribute;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 import top.glkj.teacherEvaluation.bean.User;
 import top.glkj.teacherEvaluation.services.UserService;
 
@@ -26,9 +23,19 @@ public class UserController {
      * 登陆页面控制器，默认为欢迎页面
      * @return login
      */
-    @GetMapping({"/","/index","/index.html"})
-    public String index(){
-        return "login";
+    @GetMapping({"/","/index","/index.html","/login","/login.html"})
+    public String login(Model model,@SessionAttribute(name = "user") User user){
+        if (user==null){
+            return "login";
+        }else {
+            return "index";
+        }
+    }
+    @GetMapping({"/admin","/admin/index","/admin/login","/admin/index.html","/admin/login.html"})
+    public String adminIndex(){
+
+        return "/admin/index";
+
     }
 
     /**
@@ -46,10 +53,10 @@ public class UserController {
      * @param model model
      * @return index
      */
-    @RequestMapping("/user/login")
+    @PostMapping("/user/login")
     public String getUer(User user,Model model){
         User user1 = userService.getUerByName(user.getLoginName());
-        if (user1!=null && userService.login(user1,user.getPassWord())){
+        if (user1!=null && userService.login(user1,user.getLoginPass())){
             model.addAttribute("user",user1);
             return "index";
         }else {
@@ -64,7 +71,7 @@ public class UserController {
      * @param model model
      * @return login
      */
-    @RequestMapping("/user/reg")
+    @PostMapping("/user/reg")
     public String insertUer(User user, Model model){
         boolean rs = userService.addUser(user);
         return "login";
@@ -76,7 +83,7 @@ public class UserController {
      * @param model model
      * @return index
      */
-    @RequestMapping("/user/update")
+    @PostMapping("/user/update")
     public String updateUer(User user, Model model){
         boolean rs = userService.updateUser(user);
         return "index";
@@ -88,12 +95,14 @@ public class UserController {
      * @param model model
      * @return index
      */
-    @RequestMapping("/user/del")
+    @PostMapping("/user/del")
     public String delUer(int id, Model model){
         boolean rs = userService.deleteUser(id);
         return "index";
     }
-
-
+    @GetMapping("/admin/list")
+    public String adminTest(){
+        return "admin/admin-list";
+    }
 
 }

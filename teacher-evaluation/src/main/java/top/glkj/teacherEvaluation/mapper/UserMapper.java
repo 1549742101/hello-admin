@@ -45,6 +45,7 @@ public interface UserMapper {
      * @param id 用户id
      * @return 成功>0
      */
+    @Deprecated
     public int deleteUser(int id);
 
     /**
@@ -54,4 +55,33 @@ public interface UserMapper {
      * @return 修改结果
      */
     public int updateUserPassWord(int id,String password);
+
+    /**
+     * 根据用户姓名查询
+     * @param name 传入参数
+     * @return list
+     */
+    public List<User> getUsersByUserName(String name);
+
+    /**
+     * 根据用户登录名查询
+     * @param name 传入参数
+     * @return list
+     */
+    public List<User> getUsersByLoginName(String name);
+
+    /**
+     * 逻辑删除
+     * @param id 编号
+     * @return 删除结果
+     */
+    public int removeUserById(int id);
+
+    /**
+     * 根据时间查询
+     * @param startDate 开始时间
+     * @param endDate 结束时间
+     * @return 查询结果
+     */
+    public List<User> getUsersByDate(String startDate,String endDate);
 }

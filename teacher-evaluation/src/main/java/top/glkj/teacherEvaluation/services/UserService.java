@@ -1,6 +1,6 @@
 package top.glkj.teacherEvaluation.services;
 
-import org.springframework.data.domain.Page;
+import com.github.pagehelper.PageInfo;
 import top.glkj.teacherEvaluation.bean.User;
 
 import java.util.List;
@@ -61,7 +61,7 @@ public interface UserService {
      * @param size 页面大小
      * @return 页面的值
      */
-    public Page<User> getAllUserByPage(int page,int size);
+    public PageInfo<User> getAllUserByPage(int page, int size);
 
     /**
      * 修改密码
@@ -70,4 +70,22 @@ public interface UserService {
      * @return 修改密码是否成功
      */
     public boolean resetPassWord(int id,String password);
+
+    /**
+     * 模糊查询
+     * @param startDate 创建开始时间
+     * @param endDate 创建结束时间
+     * @param page 页面
+     * @param size 大小
+     * @return 查询结果
+     */
+    public PageInfo<User> getUsersByDate(String startDate, String endDate, int page, int size);
+
+    /**
+     * 模糊查询
+     * @param startDate 创建开始时间
+     * @param endDate 创建结束时间
+     * @return 查询结果
+     */
+    public List<User> getUsersByDate(String startDate, String endDate);
 }
