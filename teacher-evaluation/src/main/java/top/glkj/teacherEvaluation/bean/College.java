@@ -26,7 +26,7 @@ import java.util.Set;
 @NoArgsConstructor
 public class College extends BaseEntity{
     private int id;
-    private String colName;
+    private String colName;//学院ID
     /**
      * 当前学院拥有的班级
      * 根据classroom的col_id关联

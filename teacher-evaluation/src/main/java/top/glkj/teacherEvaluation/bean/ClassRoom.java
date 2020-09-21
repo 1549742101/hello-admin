@@ -25,6 +25,7 @@ import java.util.Set;
 @AllArgsConstructor
 public class ClassRoom extends BaseEntity{
     private int id;
+    private int counselorId;
     private User counselorUser;
     private String className;
     private String profession;
@@ -40,4 +41,5 @@ public class ClassRoom extends BaseEntity{
      * 当前班级所在学院
      */
     private College college;
+    private int colId;
 }
