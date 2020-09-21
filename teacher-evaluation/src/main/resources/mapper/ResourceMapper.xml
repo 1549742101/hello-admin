@@ -30,7 +30,7 @@
     </insert>
 
     <update id="updateResourceById" parameterType="top.glkj.teacherEvaluation.bean.Resource">
-        UPDATE resource SET (name = #{resName},url = #{url},level = #{level},parent_id = #{parentId}) where id = #{id}
+        UPDATE resource set name = #{resName},url = #{url},level = #{level},parent_id = #{parentId} where id = #{id}
     </update>
 
     <delete id="deleteResource">

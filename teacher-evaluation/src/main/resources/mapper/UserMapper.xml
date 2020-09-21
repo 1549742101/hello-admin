@@ -18,10 +18,19 @@
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.UserMapper">
     <select id="getUserByName" parameterType="string" resultType="top.glkj.teacherEvaluation.bean.User">
-	    SELECT * FROM user WHERE login_name = #{loginName} limit 1;
+	    SELECT * FROM user WHERE login_name = #{loginName} and del_logic != 1 limit 1;
     </select>
     <select id="getAllUser" resultType="top.glkj.teacherEvaluation.bean.User">
         SELECT * FROM user;
+    </select>
+    <select id="getUsersByUserName" resultType="top.glkj.teacherEvaluation.bean.User">
+        SELECT * FROM user user_name like concat('%',#{name},'%');
+    </select>
+    <select id="getUsersByLoginName" resultType="top.glkj.teacherEvaluation.bean.User">
+        SELECT * FROM user where login_name like concat('%',#{name},'%');
+    </select>
+    <select id="getUsersByDate" resultType="top.glkj.teacherEvaluation.bean.User">
+        SELECT * FROM user where create_time between #{param1} and #{param2}
     </select>
 
     <insert id="addUser" parameterType="top.glkj.teacherEvaluation.bean.User">
@@ -34,21 +43,24 @@
 
 
     <update id="updateUser" parameterType="top.glkj.teacherEvaluation.bean.User">
-        UPDATE user SET (
+        UPDATE user SET
         login_name = #{loginName}
         ,management = #{management}
         ,user_name = #{userName}
         ,user_phone = #{userPhone}
         ,college_id = #{collegeId}
         ,del_logic = #{delLogic}
-        )
+        ,change_time = CURRENT_TIMESTAMP
         where id = #{id};
     </update>
     <update id="updateUserPassWord">
-         UPDATE user SET (login_pass = #{param2},change_time = CURRENT_TIMESTAMP where id = #{param1};
+         UPDATE user SET login_pass = #{param2},change_time = CURRENT_TIMESTAMP where id = #{param1};
     </update>
 
     <delete id="deleteUser" parameterType="int">
         DELETE FROM user WHERE id = #{id};
     </delete>
+    <update id="removeUserById">
+        UPDATE  user SET (del_logic = 1) where id = #{id}
+    </update>
 </mapper>

@@ -40,3 +40,14 @@
 1600347523379|32|statement|connection 0|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=?;|SELECT p.id,                    p.name,                    p.sort,                    p.weights,                    p.parent_id,                    p.type_id 			       FROM questionnaire AS p WHERE p.id=1;
 1600347543648|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
 1600347545839|38|statement|connection 0|SELECT * FROM questionnaire|SELECT * FROM questionnaire
+1600395510541|63|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395611078|74|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395613374|66|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600395779415|64|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600395781437|60|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600395781570|116|statement|connection 0|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE (?,?,?,?,?,?,?         ,?,?         );|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE ('179000312',0,'高铭','123456','15823151055',1,'高铭'         ,'15-九月-20',0         );
+1600532199563|44|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600532201832|36|statement|connection 0|SELECT * FROM user WHERE login_name = ? limit 1;|SELECT * FROM user WHERE login_name = '179000312' limit 1;
+1600532201923|75|statement|connection 0|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE (?,?,?,?,?,?,?         ,?,?         );|INSERT INTO user         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)         VALUE ('179000312',0,'高铭','123456','15823151055',1,'高铭'         ,'15-九月-20',0         );
+1600654040790|98|statement|connection 0|SELECT 1 FROM DUAL|SELECT 1 FROM DUAL
+1600654043399|58|statement|connection 0|SELECT * FROM user;|SELECT * FROM user;
