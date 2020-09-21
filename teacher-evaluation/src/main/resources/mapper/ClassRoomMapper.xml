@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+	namespace：命名空间，其值为某一个dao层类的具体路径
+ -->
+<mapper namespace="top.glkj.teacherEvaluation.mapper.ClassRoomMapper">
+    <resultMap id="BaseClassRoom" type="top.glkj.teacherEvaluation.bean.ClassRoom">
+        <id column="id" property="id"></id>
+        <result column="counselor_id" property="counselorId"></result>
+        <result column="name" property="className"></result>
+        <result column="profession" property="profession"></result>
+        <result column="col_id" property="colId"></result>
+    </resultMap>
+
+    <select id="getAllClassRoom"  resultMap="BaseClassRoom">
+        SELECT id,counselor_id,name,profession,col_id FROM class_room;
+    </select>
+
+    <select id="getClassRoomById"  parameterType="int" resultMap="BaseClassRoom">
+        SELECT id,counselor_id,name,profession,col_id FROM class_room WHERE id = #{id}
+    </select>
+
+    <insert id="addClassRoom" parameterType="top.glkj.teacherEvaluation.bean.ClassRoom">
+        INSERT INTO class_room(counselor_id,name,profession,col_id) VALUE (#{counselorId},#{className},#{profession},#{colId})
+    </insert>
+
+    <update id="updateClassRoomById" parameterType="top.glkj.teacherEvaluation.bean.ClassRoom">
+        UPDATE class_room SET counselor_id = #{counselorId},name = #{className},profession = #{profession},col_id = #{colId}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteClassRoom">
+        DELETE FROM class_room WHERE id = #{id}
+    </delete>
+</mapper>
