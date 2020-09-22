@@ -18,13 +18,13 @@
  -->
 <mapper namespace="top.glkj.teacherEvaluation.mapper.UserMapper">
     <select id="getUserByName" parameterType="string" resultType="top.glkj.teacherEvaluation.bean.User">
-	    SELECT * FROM user WHERE login_name = #{loginName} and del_logic != 1 limit 1;
+	    SELECT * FROM user WHERE login_name = #{loginName} and del_logic != 1 limit 1
     </select>
     <select id="getAllUser" resultType="top.glkj.teacherEvaluation.bean.User">
-        SELECT * FROM user;
+        SELECT * FROM user
     </select>
     <select id="getUsersByUserName" resultType="top.glkj.teacherEvaluation.bean.User">
-        SELECT * FROM user user_name like concat('%',#{name},'%');
+        SELECT * FROM user user_name like concat('%',#{name},'%')
     </select>
     <select id="getUsersByLoginName" resultType="top.glkj.teacherEvaluation.bean.User">
         SELECT * FROM user where login_name like concat('%',#{name},'%');
@@ -38,7 +38,7 @@
         (login_name,management,user_name,login_pass,user_phone,college_id,create_man,create_time,del_logic)
         VALUE (#{loginName},#{management},#{userName},#{loginPass},#{userPhone},#{collegeId},#{createMan}
         ,#{createTime},#{delLogic}
-        );
+        )
     </insert>
 
 
@@ -51,14 +51,14 @@
         ,college_id = #{collegeId}
         ,del_logic = #{delLogic}
         ,change_time = CURRENT_TIMESTAMP
-        where id = #{id};
+        where id = #{id}
     </update>
     <update id="updateUserPassWord">
-         UPDATE user SET login_pass = #{param2},change_time = CURRENT_TIMESTAMP where id = #{param1};
+         UPDATE user SET login_pass = #{param2},change_time = CURRENT_TIMESTAMP where id = #{param1}
     </update>
 
     <delete id="deleteUser" parameterType="int">
-        DELETE FROM user WHERE id = #{id};
+        DELETE FROM user WHERE id = #{id}
     </delete>
     <update id="removeUserById">
         UPDATE  user SET (del_logic = 1) where id = #{id}

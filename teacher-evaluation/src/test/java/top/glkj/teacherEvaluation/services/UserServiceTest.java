@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import top.glkj.teacherEvaluation.bean.User;
 
 import static org.junit.Assert.*;
 
@@ -30,7 +31,17 @@ public class UserServiceTest {
 
     @Test
     public void addUser() {
-
+        for (int i = 40; i < 99; i++) {
+            User user = new User();
+            user.setLoginName("1790003"+i);
+            user.setLoginPass("123456");
+            user.setCreateMan("admin");
+            user.setDelLogic(0);
+            user.setUserName("test"+i);
+            user.setManagement(1);
+            user.setUserPhone("134567891"+i);
+            assertTrue(userService.addUser(user));
+        }
     }
 
     @Test

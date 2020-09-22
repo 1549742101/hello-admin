@@ -25,9 +25,9 @@
     <div class="x-nav">
       <span class="layui-breadcrumb">
         <a href="">首页</a>
-        <a href="">演示</a>
+        <a href="">用户管理</a>
         <a>
-          <cite>导航元素</cite></a>
+          <cite>用户列表</cite></a>
       </span>
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
@@ -44,7 +44,7 @@
       <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
         <button class="layui-btn" onclick="x_admin_show('添加用户','./admin-add.html')"><i class="layui-icon"></i>添加</button>
-        <span class="x-right" style="line-height:40px">共有数据：<span>88</span> 条</span>
+        <span class="x-right" style="line-height:40px">共有数据：<span th:text="${users.getTotal()}">0</span> 条</span>
       </xblock>
       <table class="layui-table">
         <thead>
@@ -56,23 +56,22 @@
             <th>登录名</th>
             <th>手机</th>
             <th>用户名</th>
-            <th>角色</th>
             <th>创建者</th>
             <th>加入时间</th>
             <th>状态</th>
             <th>操作</th>
         </thead>
         <tbody>
-          <tr>
+          <tr th:each="user : ${users.getList()}">
             <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
+              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" th:data-id="${user.getId()}"><i class="layui-icon">&#xe605;</i></div>
             </td>
-            <td>1</td>
-            <td>admin</td>
-            <td>18925139194</td>
-            <td>113664000@qq.com</td>
-            <td>超级管理员</td>
-            <td>2017-01-01 11:11:42</td>
+            <td th:text="${user.getId()}">1</td>
+            <td th:text="${user.getLoginName()}">admin</td>
+            <td th:text="${user.getUserPhone()}">18925139194</td>
+            <td th:text="${user.getUserName()}">113664000@qq.com</td>
+            <td th:text="${user.getCreateMan()}">超级管理员</td>
+            <td th:text="${user.getCreateTime()}">2017-01-01 11:11:42</td>
             <td class="td-status">
               <span class="layui-btn layui-btn-normal layui-btn-mini">已启用</span></td>
             <td class="td-manage">
@@ -91,12 +90,16 @@
       </table>
       <div class="page">
         <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">3</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
+          <a class="prev"
+             th:href="@{'/admin/list/'+${users.getPrePage()==0?users.getPages():users.getPrePage()}+'/'+${users.getPageSize()}}">&lt;&lt;</a>
+          <a class="num" href="" th:text="${users.getPrePage()==0?users.getPages():users.getPrePage()}"
+             th:href="@{'/admin/list/'+${users.getPrePage()==0?users.getPages():users.getPrePage()}+'/'+${users.getPageSize()}}"
+          >1</a>
+          <span class="current" th:text="${users.getPageNum()}">2</span>
+          <a class="num" href="" th:text="${users.getNextPage()==0?1:users.getNextPage()}"
+             th:href="@{'/admin/list/'+${users.getNextPage()==0?1:users.getNextPage()}+'/'+${users.getPageSize()}}"
+          >3</a>
+          <a class="next" th:href="@{'/admin/list/'+${users.getNextPage()==0?1:users.getNextPage()}+'/'+${users.getPageSize()}}" href="">&gt;&gt;</a>
         </div>
       </div>
 

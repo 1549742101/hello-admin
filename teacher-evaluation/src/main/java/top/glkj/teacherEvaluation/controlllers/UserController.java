@@ -42,15 +42,12 @@ public class UserController {
     }
 
     /**
-     * 根据type权限确定评教类型，并跳转到相应的评教页面
+     *
      * @return Student_appraisal
      */
-    @GetMapping("/user/appraisal")
-    public String appraisal(@SessionAttribute("user") User user){
-//        if(user.getUserType)
-        System.out.println(user.getLoginName());
-        System.out.println(user.getLoginName());
-        return "Student_appraisal"; // return "Teacher_appraisal";
+    @GetMapping("/user/ping")
+    public String pingJiao(){
+        return "Student_appraisal";
     }
 
     /**
@@ -109,8 +106,15 @@ public class UserController {
         boolean rs = userService.deleteUser(id);
         return "index";
     }
-    @GetMapping("/admin/list")
-    public String getAllUser(Model model){
+    @GetMapping("/admin/list/{page}/{size}")
+    public String getAllUser(Model model,
+                             @PathVariable(required = false,name = "page") int page,
+                             @PathVariable(required = false,name = "size")int size){
+        if (page>20||page<1||size<0||size>100){
+            page = 1;
+            size = 8;
+        }
+        model.addAttribute("users",userService.getAllUserByPage(page,size));
         return "admin/admin-list";
     }
 
@@ -127,5 +131,9 @@ public class UserController {
             model.addAttribute("msg","用户名或密码错误");
         }
         return adminIndex(user,model);
+    }
+    @RequestMapping("/loginOut")
+    public String userLoginOut(@SessionAttribute(name = "user",value = "user",required = false) User user,Model model){
+        return login(model, null);
     }
 }

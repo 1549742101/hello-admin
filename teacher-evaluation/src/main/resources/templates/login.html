@@ -61,11 +61,11 @@
                     <label class="label" for="Password1">密码</label>
                     <input type="password" class="form-control" id="Password1" name="loginPass" placeholder="密码" required>
                 </div>
+                <div class="form-row align-items-center">
+                    <p class="msg" th:text="${msg==null?'':msg}" style="text-align: center;color: #ff0000"></p>
+                </div>
                 <div class="but-login">
                     <button type="submit" class="btn text-white btn-outline-info ">登录</button>
-                </div>
-                <div class="form-row align-items-center">
-                    <p class="msg" th:text="${msg==null?'':msg}"></p>
                 </div>
             </form>
         </div>
