@@ -9,6 +9,7 @@ $(function(){
     })
     let barEdit = $(".menu-bar");
     ClickAToBar(clickMenu,frame,barEdit);
+    BarEdit(barEdit,frame)
 })
 
 function ClickAToBar(arr,obj,barEdit){
@@ -18,7 +19,9 @@ function ClickAToBar(arr,obj,barEdit){
             console.log(src)
             if (src&&src!==""){
                 obj.src = src;
+                $(barEdit).find("li").removeClass("active")
                 $(barEdit).append(testHtml(src,$(arr[i]).children("text").html()));
+                BarEdit(barEdit,obj)
             }
             console.log(i)
             for (let j = 0; j < arr.length; j++) {
@@ -42,12 +45,29 @@ function ClickAToBar(arr,obj,barEdit){
 function testHtml(url,menuName){
     const html = "<li role=\"presentation\" class=\"active\">"+
         "<a href=\""+url+"\">"+
-           " <text>"+menuName+"</text>"+
-            "<span class=\"glyphicon glyphicon-remove\"></span>"+
+        " <text>"+menuName+"</text>"+
+        "<span class=\"glyphicon glyphicon-remove\"></span>"+
         "</a>"+
-    "</li>";
+        "</li>";
     return html;
 }
-function BarEdit(parent){
-
+function BarEdit(parent,frame){
+    let AChildes = $(parent).find("a");
+    let closes = $(parent).find("span");
+    let defaultBar = $(AChildes[0]);
+    closes.click(function (){
+        if ($(this).parent("a").parent("li").hasClass("active")){
+            frame.src = $(defaultBar).attr("href");
+            $(defaultBar).parent("li").addClass("active")
+        }
+        $(this).parent("a").parent("li").remove();
+        return false;
+    })
+    AChildes.click(function (){
+        $(AChildes).parent("li").removeClass("active")
+        let href = $(this).prop("href");
+        frame.src = href;
+        $(this).parent("li").addClass("active")
+        return false;
+    })
 }
