@@ -5,13 +5,13 @@ $(function(){
     let json;
     $.ajax(
         {
-            url:"menu.json",
+            url:"../../static/admin/menu.json",
             type:"post",
             dataType:"text",
             success:function (result){
                 json = result;
                 createTreeMenu($(menu),json)
-                console.log(result)
+                //console.log(result)
             },
             error:function (e){
                 console.log("error:")

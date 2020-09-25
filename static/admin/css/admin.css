@@ -19,7 +19,8 @@ body {
 }
 .menu{
     width: 250px;
-    background: #293038;
+    background: #222d32;
+    font-size: 12px;
 }
 .main{
     flex: 1;
@@ -80,15 +81,16 @@ ul,ol,li{
 }
 .menu-tree{
     width: 250px;
-    background: #293038;
-    color: white;
+    background: #222d32;
+    color: #c7ddef;
 }
 .menu-tree>li>text,.menu-item>li>text{
     line-height: 32px;
     padding-left: 5px;
+    font-size: 12px;
 }
 .menu-tree>li,.menu-item>li{
-    border-bottom: 1px solid #818a91;
+    border-bottom: 1px solid #213665;
     cursor: pointer;
 }
 .menu-tree>li>text:hover,.menu-item>li>text:hover{
@@ -97,23 +99,29 @@ ul,ol,li{
 }
 .menu-tree>li>span:nth-of-type(1){
     padding-left: 16px;
+    font-size: 12px;
 }
 .menu-item>li>span:nth-of-type(1){
     padding-left: 40px;
+    font-size: 12px;
 }
 .menu-tree>li>span:nth-of-type(2),.menu-item>li>span:nth-of-type(2){
     float: right;
     margin-right: 30px;
-    color: white;
+    color: #c7ddef;
+    font-size: 12px;
 }
 .menu-item>li>.menu-item>li>span:nth-of-type(1){
     padding-left: 56px;
+    font-size: 12px;
 }
 .menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
     padding-left: 72px;
+    font-size: 12px;
 }
 .menu-item>li>.menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
     padding-left: 88px;
+    font-size: 12px;
 }
 .parent{
     -moz-user-select: none; /*火狐*/

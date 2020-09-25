@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="../../static/admin/css/bootstrap.css">
+    <script src="../../static/admin/js/jquery.min.js"></script>
+    <script src="../../static/admin/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../../static/admin/css/iconfont.css">
     <style>
         table>tbody>tr>td>a{
             width: unset;
@@ -16,6 +16,8 @@
             cursor: pointer;
         }
     </style>
+    <script src="../../static/admin/js/user-list.js"></script>
+    <script src="../../static/admin/js/utils.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -69,21 +71,21 @@
                 <td>北京市 海淀区</td>
                 <td>2017-01-01 11:11:42</td>
                 <td class="td-status">
-                    <button class="btn btn-info">已启用</button>
+                    <button class="btn btn-info editEnable">已启用</button>
                 </td>
                 <td class="td-manage">
                     <a onclick="" href="" title="禁用"><span class="iconfont icon-lock-fill"></span></a>
                     <a title="编辑" onclick=""><span class="iconfont icon-edit1"></span></a>
                     <a onclick="" title="修改密码" href=""><span class="iconfont icon-exchange-fill"></span></a>
-                    <a title="删除" onclick="" href=""><span class="iconfont icon-delete-fill"></span></a>
+                    <a title="删除" onclick="editDelete(this,'hello.html');" href=""><span class="iconfont icon-delete-fill"></span></a>
                 </td>
             </tr>
             <tr>
                 <td>
                     <input type="checkbox">
                 </td>
-                <td>1</td>
-                <td>小明</td>
+                <td>2</td>
+                <td>小方</td>
                 <td>男</td>
                 <td>13000000000</td>
                 <td>admin@mail.com</td>
