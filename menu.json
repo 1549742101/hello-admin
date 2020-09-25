@@ -1,0 +1,125 @@
+[
+  {
+    "id": 1,
+    "name": "测试菜单1",
+    "icon":"icon-font-fill",
+    "url": null,
+    "child": [
+      {
+        "id": 2,
+        "name": "测试菜单2",
+        "icon": "test1",
+        "url": "1.html"
+      },
+      {
+        "id": 4,
+        "icon": "test1",
+        "name": "测试菜单25",
+        "url": "2.html",
+        "child": [
+          {
+            "id": 2,
+            "name": "测试菜单2",
+            "icon": "test1",
+            "url": "1.html"
+          },
+          {
+            "id": 4,
+            "icon": "test1",
+            "name": "测试菜单25",
+            "url": "2.html",
+            "child": [
+              {
+                "id": 2,
+                "name": "测试菜单2",
+                "icon": "test1",
+                "url": "1.html"
+              },
+              {
+                "id": 4,
+                "icon": "test1",
+                "name": "测试菜单25",
+                "url": "2.html"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "测试菜单13",
+    "icon":"icon-font-fill",
+    "url": null,
+    "child": [
+      {
+        "id": 6,
+        "name": "测试菜单25",
+        "icon":"icon-font-fill",
+        "url": null,
+        "child": [
+          {
+            "id": 7,
+            "name": "测试菜单31",
+            "icon":"icon-font-fill",
+            "url": "3.html"
+          },
+          {
+            "id": 8,
+            "name": "测试菜单21",
+            "icon":"icon-font-fill",
+            "url": "4.html"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "测试菜单19",
+        "icon":"icon-font-fill",
+        "url": "user-list.html"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "测试菜单10",
+    "icon":"icon-font-fill",
+    "url": "user-list.html",
+    "child": [
+      {
+        "id": 7,
+        "name": "测试菜单12",
+        "icon":"icon-font-fill",
+        "url": "3.html"
+      },
+      {
+        "id": 8,
+        "name": "测试菜单14",
+        "icon":"icon-font-fill",
+        "url": "4.html"
+      }
+    ]
+  }
+  ,
+  {
+    "id": 11,
+    "name": "测试菜单11",
+    "icon":"icon-font-fill",
+    "url": "user-list.html",
+    "child": [
+      {
+        "id": 7,
+        "name": "测试菜单15",
+        "icon":"icon-font-fill",
+        "url": "3.html"
+      },
+      {
+        "id": 8,
+        "name": "测试菜单18",
+        "icon":"icon-font-fill",
+        "url": "4.html"
+      }
+    ]
+  }
+]

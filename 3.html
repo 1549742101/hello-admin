@@ -3,8 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        ul,ol,li{
+            list-style: none;
+            padding: unset;
+            margin: unset;
+        }
+        .menu-tree{
+            width: 230px;
+            background: #293038;
+            color: white;
+        }
+        .menu-tree>li>text,.menu-item>li>text{
+            line-height: 32px;
+            padding-left: 5px;
+        }
+        .menu-tree>li,.menu-item>li{
+            border-bottom: 1px solid #818a91;
+            cursor: pointer;
+        }
+        .menu-tree>li>text:hover,.menu-item>li>text:hover{
+            color: #00ccff;
+            overflow:visible;
+        }
+        .menu-tree>li>span:nth-of-type(1){
+            padding-left: 16px;
+        }
+        .menu-item>li>span:nth-of-type(1){
+            padding-left: 40px;
+        }
+        .menu-tree>li>span:nth-of-type(2),.menu-item>li>span:nth-of-type(2){
+            float: right;
+            margin-right: 30px;
+            color: white;
+        }
+        .menu-item>li>.menu-item>li>span:nth-of-type(1){
+            padding-left: 56px;
+        }
+        .menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
+            padding-left: 72px;
+        }
+        .menu-item>li>.menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
+            padding-left: 88px;
+        }
+        .parent{
+            -moz-user-select: none; /*火狐*/
+            -webkit-user-select: none; /*webkit浏览器*/
+            -ms-user-select: none; /*IE10*/
+            -khtml-user-select: none; /*早期浏览器*/
+            user-select: none;
+            unselectable:"on"
+        }
+        .parent>.menu-item{
+            display: none;
+        }
+        .open>.menu-item{
+            display: block;
+        }
+    </style>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
 </head>
 <body>
-333
+<ul class="menu-tree" >
+    <li class="active" href="user-list.html">
+        <span class="iconfont icon-user-fill"></span>
+        <text>用户管理</text>
+        <span class="iconfont icon-arrow-left-bold"></span>
+    </li>
+
+    <li href="3.html">
+        <span class="iconfont icon-user-fill"></span>
+        <text>角色管理</text>
+        <span class="iconfont icon-arrow-left-bold"></span>
+    </li>
+
+    <li class="parent open">
+        <span class="iconfont icon-user-fill"></span>
+        <text>php</text>
+        <span class="iconfont icon-arrow-down-bold"></span>
+        <ul class="menu-item">
+            <li href="demo_index.html">
+                <span class="iconfont icon-user-fill"></span>
+                <text>资源管理</text>
+                <span class="iconfont icon-arrow-left-bold"></span>
+            </li>
+
+            <li href="4.html">
+                <span class="iconfont icon-user-fill"></span>
+                <text>测试菜单</text>
+                <span class="iconfont icon-arrow-left-bold"></span>
+            </li>
+            <li class="parent open">
+                <span class="iconfont icon-user-fill"></span>
+                <text>php</text>
+                <span class="iconfont icon-arrow-left-bold"></span>
+                <ul class="menu-item">
+                    <li href="demo_index.html">
+                        <span class="iconfont icon-user-fill"></span>
+                        <text>资源管理</text>
+                        <span class="iconfont icon-arrow-left-bold"></span>
+                    </li>
+                    <li href="4.html">
+                        <span class="iconfont icon-user-fill"></span>
+                        <text>测试菜单</text>
+                        <span class="iconfont icon-arrow-left-bold"></span>
+                    </li>
+                    <li class="parent">
+                        <span class="iconfont icon-user-fill"></span>
+                        <text>php</text>
+                        <span class="iconfont icon-arrow-left-bold"></span>
+                        <ul class="menu-item">
+                            <li href="demo_index.html">
+                                <span class="iconfont icon-user-fill"></span>
+                                <text>资源管理</text>
+                                <span class="iconfont icon-arrow-left-bold"></span>
+                            </li>
+                            <li href="4.html">
+                                <span class="iconfont icon-user-fill"></span>
+                                <text>测试菜单</text>
+                                <span class="iconfont icon-arrow-left-bold"></span>
+                            </li>
+                            <li class="parent open">
+                                <span class="iconfont icon-user-fill"></span>
+                                <text>php</text>
+                                <span class="iconfont icon-arrow-left-bold"></span>
+                                <ul class="menu-item">
+                                    <li href="demo_index.html">
+                                        <span class="iconfont icon-user-fill"></span>
+                                        <text>资源管理</text>
+                                        <span class="iconfont icon-arrow-left-bold"></span>
+                                    </li>
+                                    <li href="4.html">
+                                        <span class="iconfont icon-user-fill"></span>
+                                        <text>测试菜单</text>
+                                        <span class="iconfont icon-arrow-left-bold"></span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li href="index.html">
+        <span class="iconfont icon-user-fill"></span>
+        <text>测试菜单2</text>
+        <span class="iconfont icon-arrow-left-bold"></span>
+    </li>
+    <li href="3.html">
+        <span class="iconfont icon-user-fill"></span>
+        <text>测试菜单3</text>
+    </li>
+    <li class="parent">
+        <span class="iconfont icon-user-fill"></span>
+        <text>测试菜单4</text>
+        <span class="iconfont icon-arrow-left-bold"></span>
+        <ul class="menu-item">
+            <li href="1.html">
+                <span class="iconfont icon-user-fill"></span>
+                <text>测试菜单4</text>
+                <span class="iconfont icon-arrow-left-bold"></span>
+            </li>
+            <li href="2.html">
+                <span class="iconfont icon-user-fill"></span>
+                <text>测试菜单5</text>
+                <span class="iconfont icon-arrow-left-bold"></span>
+            </li>
+        </ul>
+    </li>
+</ul>
+<ul class="menu-tree" id="test" ></ul>
+<script>
+    let json;
+    $.ajax(
+        {
+            url:"menu.json",
+            type:"post",
+            dataType:"text",
+            success:function (result){
+                json = result;
+                createTreeMenu($("#test"))
+                console.log(result)
+            },
+            error:function (e){
+                console.log("error:")
+                console.log(e)
+            }
+        }
+    )
+    /*let json =
+        "[\n" +
+        "  {\n" +
+        "    \"id\": 1,\n" +
+        "    \"name\": \"测试菜单1\",\n" +
+        "    \"icon\":\"icon-font-fill\",\n" +
+        "    \"url\": null,\n" +
+        "    \"child\": [\n" +
+        "      {\n" +
+        "        \"id\": 2,\n" +
+        "        \"name\": \"测试菜单2\",\n" +
+        "        \"icon\": \"test1\",\n" +
+        "        \"url\": \"1.html\"\n" +
+        "      },\n" +
+        "      {\n" +
+        "        \"id\": 4,\n" +
+        "        \"icon\": \"test1\",\n" +
+        "        \"name\": \"测试菜单25\",\n" +
+        "        \"url\": \"2.html\",\n" +
+        "        \"child\": [\n" +
+        "          {\n" +
+        "            \"id\": 2,\n" +
+        "            \"name\": \"测试菜单2\",\n" +
+        "            \"icon\": \"test1\",\n" +
+        "            \"url\": \"1.html\"\n" +
+        "          },\n" +
+        "          {\n" +
+        "            \"id\": 4,\n" +
+        "            \"icon\": \"test1\",\n" +
+        "            \"name\": \"测试菜单25\",\n" +
+        "            \"url\": \"2.html\",\n" +
+        "            \"child\": [\n" +
+        "              {\n" +
+        "                \"id\": 2,\n" +
+        "                \"name\": \"测试菜单2\",\n" +
+        "                \"icon\": \"test1\",\n" +
+        "                \"url\": \"1.html\"\n" +
+        "              },\n" +
+        "              {\n" +
+        "                \"id\": 4,\n" +
+        "                \"icon\": \"test1\",\n" +
+        "                \"name\": \"测试菜单25\",\n" +
+        "                \"url\": \"2.html\"\n" +
+        "              }\n" +
+        "            ]\n" +
+        "          }\n" +
+        "        ]\n" +
+        "      }\n" +
+        "    ]\n" +
+        "  },\n" +
+        "  {\n" +
+        "    \"id\": 5,\n" +
+        "    \"name\": \"测试菜单13\",\n" +
+        "    \"icon\":\"icon-font-fill\",\n" +
+        "    \"url\": null,\n" +
+        "    \"child\": [\n" +
+        "      {\n" +
+        "        \"id\": 6,\n" +
+        "        \"name\": \"测试菜单25\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": null,\n" +
+        "        \"child\": [\n" +
+        "          {\n" +
+        "            \"id\": 7,\n" +
+        "            \"name\": \"测试菜单31\",\n" +
+        "            \"icon\":\"icon-font-fill\",\n" +
+        "            \"url\": \"3.html\"\n" +
+        "          },\n" +
+        "          {\n" +
+        "            \"id\": 8,\n" +
+        "            \"name\": \"测试菜单21\",\n" +
+        "            \"icon\":\"icon-font-fill\",\n" +
+        "            \"url\": \"4.html\"\n" +
+        "          }\n" +
+        "        ]\n" +
+        "      },\n" +
+        "      {\n" +
+        "        \"id\": 9,\n" +
+        "        \"name\": \"测试菜单19\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": \"user-list.html\"\n" +
+        "      }\n" +
+        "    ]\n" +
+        "  },\n" +
+        "  {\n" +
+        "    \"id\": 10,\n" +
+        "    \"name\": \"测试菜单10\",\n" +
+        "    \"icon\":\"icon-font-fill\",\n" +
+        "    \"url\": \"user-list.html\",\n" +
+        "    \"child\": [\n" +
+        "      {\n" +
+        "        \"id\": 7,\n" +
+        "        \"name\": \"测试菜单12\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": \"3.html\"\n" +
+        "      },\n" +
+        "      {\n" +
+        "        \"id\": 8,\n" +
+        "        \"name\": \"测试菜单14\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": \"4.html\"\n" +
+        "      }\n" +
+        "    ]\n" +
+        "  }\n" +
+        "  ,\n" +
+        "  {\n" +
+        "    \"id\": 11,\n" +
+        "    \"name\": \"测试菜单11\",\n" +
+        "    \"icon\":\"icon-font-fill\",\n" +
+        "    \"url\": \"user-list.html\",\n" +
+        "    \"child\": [\n" +
+        "      {\n" +
+        "        \"id\": 7,\n" +
+        "        \"name\": \"测试菜单15\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": \"3.html\"\n" +
+        "      },\n" +
+        "      {\n" +
+        "        \"id\": 8,\n" +
+        "        \"name\": \"测试菜单18\",\n" +
+        "        \"icon\":\"icon-font-fill\",\n" +
+        "        \"url\": \"4.html\"\n" +
+        "      }\n" +
+        "    ]\n" +
+        "  }\n" +
+        "]"*/
+
+    let objMenu = [];
+    function createTreeMenu(parent){
+        console.log(json)
+        objMenu = JSON.parse(json);
+        let html = "";
+        for (let i = 0; i < objMenu.length; i++) {
+            html+=createParent(objMenu[i].icon,objMenu[i].name,objMenu[i].child)
+        }
+        $(parent).append(html)
+        openMenu();
+        openTarget();
+    }
+    function createChildMenu(url,icon,name){
+        const html =
+            "<li href=\""+url+"\">\n" +
+            "        <span class=\"iconfont "+icon+"\"></span>\n" +
+            "        <text>"+name+"</text>\n" +
+            "    </li>"
+        return html;
+    }
+    function createParent(icon,name,child){
+        let children="";
+
+        for (let i = 0; i < child.length; i++) {
+            if(child[i].child){
+                children+=createParent(icon,name,child[i].child)
+            }else {
+                children+=createChildMenu(child[i].url,child[i].icon,child[i].name);
+            }
+        }
+        const html =
+            "<li class=\"parent\">\n" +
+            "        <span class=\"iconfont "+icon+"\"></span>\n" +
+            "        <text>"+name+"</text>\n" +
+            "        <span class=\"iconfont icon-arrow-left-bold\"></span>"+
+            "        <ul class=\"menu-item\">"+
+            children+
+            "        </ul>"+
+            "</li>"
+        return html;
+    }
+    function openMenu(){
+        let menuParent = $(".menu-tree").find(".parent");
+        for (let i = 0; i < menuParent.length; i++) {
+            $(menuParent[i]).click(function (){
+                if ($(this).hasClass("open")){
+                    console.log($(this))
+                    $(this).removeClass("open")
+                    return false;
+                }
+                $(menuParent).removeClass("open");
+                let testParent = $(this).parents(".parent");
+                for (let j = 0; j < testParent.length; j++) {
+                    $(testParent[j]).addClass("open");
+                }
+                $(this).addClass("open")
+                return false;
+            })
+        }
+    }
+    function openTarget(){
+        let child = $(".menu-tree").find("li:not(.parent)");
+        $(child).click(function (){
+            console.log($(this).attr("href"))
+            return false;
+        })
+    }
+</script>
 </body>
 </html>
