@@ -42,7 +42,7 @@ function alertProp(title,msg,btn1Text,btn2Text,fun1,fun2){
         "                    "+title+"\n" +
         "                </h4>\n" +
         "            </div>\n" +
-        "            <div class=\"modal-body text-danger\">\n" +
+        "            <div class=\"modal-body\">\n" +
         "                "+msg+"\n" +
         "            </div>\n" +
         "            <div class=\"modal-footer\">\n" +
@@ -70,6 +70,9 @@ function alertProp(title,msg,btn1Text,btn2Text,fun1,fun2){
     model.on("hide.bs.modal",function (){
         $(model).remove();
     })
+    function getBody() {
+        return $(id).find("modal-body")
+    }
 }
 function alertWarning(title,msg,ms){
     if (!title){

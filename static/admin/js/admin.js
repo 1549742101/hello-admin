@@ -114,7 +114,7 @@ function createParent(icon,name,child){
 
     for (let i = 0; i < child.length; i++) {
         if(child[i].child){
-            children+=createParent(icon,child[i].name,child[i].child)
+            children+=createParent(child[i].icon,child[i].name,child[i].child)
         }else {
             children+=createChildMenu(child[i].url,child[i].icon,child[i].name);
         }

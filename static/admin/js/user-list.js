@@ -7,7 +7,7 @@ function editStatus(val,url){
     let statusText = statusBtn.text()==="已禁用"?"启用":"禁用";
     const defaultEnableText = "<button class=\"btn btn-info\">已启用</button>"
     const defaultDisableText = "<button class=\"btn btn-default\" disabled>已禁用</button>"
-    alertProp("变更用户","确认"+statusText+"编号为"+id+"用户吗？","确定"+statusText,"取消",
+    alertProp("变更用户","<span class='text-danger'>确认"+statusText+"编号为"+id+"用户吗？</span>","确定"+statusText,"取消",
         function (){
             if (status){
                 $(tdStatus).prepend(defaultDisableText);
@@ -35,7 +35,7 @@ function editOpen(val,url){
 function editDelete(val,url,e){
     let tr = $(val).parents("tr");
     let id = $(tr).find("input[type='checkbox']").val();
-    alertProp("删除用户","确认删除编号为"+id+"的数据吗","确认删除","取消删除",
+    alertProp("删除用户","<span class='text-danger'>确认删除编号为"+id+"的数据吗</span>","确认删除","取消删除",
         function (){
             let res = true;
             if (res){
