@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "测试菜单1",
-    "icon":"icon-user-fill",
+    "icon":"icon-user-filling",
     "url": null,
     "child": [
       {

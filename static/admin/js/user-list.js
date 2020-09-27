@@ -1,26 +1,116 @@
 function editStatus(val,url){
+    let tr = $(val).parents("tr");
+    let id = $(tr).find("input[type='checkbox']").val();
+    let tdStatus = $(tr).find(".td-status");
+    let statusBtn = $(tdStatus).find("button");
+    let status = statusBtn.text()!=="已禁用";
+    let statusText = statusBtn.text()==="已禁用"?"启用":"禁用";
+    const defaultEnableText = "<button class=\"btn btn-info\">已启用</button>"
+    const defaultDisableText = "<button class=\"btn btn-default\" disabled>已禁用</button>"
+    alertProp("变更用户","确认"+statusText+"编号为"+id+"用户吗？","确定"+statusText,"取消",
+        function (){
+            if (status){
+                $(tdStatus).prepend(defaultDisableText);
+                statusBtn.remove()
+            }else {
+                $(tdStatus).prepend(defaultEnableText);
+                statusBtn.remove()
+            }
+        },function (){
 
-}
-function editOpen(val,url){
-
-}
-function editDelete(val,url,e){
-    alertProp(null,null,null,null,null,null);
+        }
+    )
     $(this).on("click",function (){
         return false;
     })
     return false;
 }
-function centerModals(model) {
-    $(model).each(
-        function(i) {
-            let $clone = $(this).clone().css('display','block').appendTo('body');
-            let top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
-            top = top > 0 ? top : 0;
-            $clone.remove();
-            $(this).find('.modal-content').css("margin-top", top);
-        });
+function editOpen(val,url){
+    alertProp(null,null,null,null);
+    $(this).on("click",function (){
+        return false;
+    })
+    return false;
 }
+function editDelete(val,url,e){
+    let tr = $(val).parents("tr");
+    let id = $(tr).find("input[type='checkbox']").val();
+    alertProp("删除用户","确认删除编号为"+id+"的数据吗","确认删除","取消删除",
+        function (){
+            let res = true;
+            if (res){
+                $(tr).remove();
+                alertSuccess("信息提示！","你删除了编号为"+id+"的数据！")
+            }else {
+                alertWarning("信息提示！","删除编号为"+id+"的数据时发生了错误！")
+            }
+        },function (){
+            alertWarning("信息提示！","你取消了删除！")
+        });
+    $(this).on("click",function (){
+        return false;
+    })
+    return false;
+}
+function editPassWord(){
+    alertProp(null,null,null,null);
+    $(this).on("click",function (){
+        return false;
+    })
+    return false;
+}
+function allDelete(){
+    let checks = $("table>tbody").find("input[type='checkbox']");
+    if (checks.length===0){
+        alertWarning("删除失败!","你未选择任何数据")
+    }else{
+        let arr = [];
+        for (let i = 0; i < checks.length; i++) {
+            if ($(checks[i]).is(":checked")){
+                arr.push($(checks[i]).val())
+            }
+        }
+        if (arr.length===0){
+            alertWarning("删除失败!","你未选择任何数据")
+        }else {
+            alertProp("删除用户","确认删除选中的用户吗？","确认删除","取消",
+                function (){
+                    for (let i = 0; i < checks.length; i++) {
+                        if ($(checks[i]).is(":checked")){
+                            let tr = $(checks[i]).parents("tr");
+                            $(tr).remove();
+                        }
+                    }
+                    $(".all-check").prop("checked",false);
+                },function (){
+                    console.log(checks)
+                })
+        }
+    }
+}
+function add(){
+    alertProp();
+}
+$(function (){
+    let allCheck = $(".all-check");
+    //console.log(allCheck)
+    allCheck.click(function (){
+        let checked = $(this).prop("checked");
+        let allCheckBox = $("table").find("input[type='checkbox']");
+        allCheckBox.prop("checked",checked)
+    })
+})
+
+// function centerModals(model) {
+//     $(model).each(
+//         function(i) {
+//             let $clone = $(this).clone().css('display','block').appendTo('body');
+//             let top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+//             top = top > 0 ? top : 0;
+//             $clone.remove();
+//             $(this).find('.modal-content').css("margin-top", top);
+//         });
+// }
 // function alertProp(title,msg,btn1Text,btn2Text,fun1,fun2){
 //     let id = "model"+Number.parseInt(Math.random()*10+"");
 //     if (!btn1Text){

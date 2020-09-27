@@ -76,8 +76,8 @@ body {
 
 ul,ol,li{
     list-style: none;
-    padding: unset;
-    margin: unset;
+    padding: 0;
+    margin: 0;
 }
 .menu-tree{
     width: 250px;
@@ -85,12 +85,12 @@ ul,ol,li{
     color: #c7ddef;
 }
 .menu-tree>li>text,.menu-item>li>text{
-    line-height: 32px;
-    padding-left: 5px;
+    line-height: 40px;
+    padding-left: 10px;
     font-size: 12px;
 }
 .menu-tree>li,.menu-item>li{
-    border-bottom: 1px solid #213665;
+    border-bottom: 1px solid #c7ddef;
     cursor: pointer;
 }
 .menu-tree>li>text:hover,.menu-item>li>text:hover{
@@ -98,7 +98,7 @@ ul,ol,li{
     overflow:visible;
 }
 .menu-tree>li>span:nth-of-type(1){
-    padding-left: 16px;
+    padding-left: 20px;
     font-size: 12px;
 }
 .menu-item>li>span:nth-of-type(1){
@@ -107,20 +107,21 @@ ul,ol,li{
 }
 .menu-tree>li>span:nth-of-type(2),.menu-item>li>span:nth-of-type(2){
     float: right;
+    line-height: 40px;
     margin-right: 30px;
     color: #c7ddef;
     font-size: 12px;
 }
 .menu-item>li>.menu-item>li>span:nth-of-type(1){
-    padding-left: 56px;
+    padding-left: 60px;
     font-size: 12px;
 }
 .menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
-    padding-left: 72px;
+    padding-left: 80px;
     font-size: 12px;
 }
 .menu-item>li>.menu-item>li>.menu-item>li>.menu-item>li>span:nth-of-type(1){
-    padding-left: 88px;
+    padding-left: 100px;
     font-size: 12px;
 }
 .parent{

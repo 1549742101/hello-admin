@@ -12,12 +12,14 @@ function alertProp(title,msg,btn1Text,btn2Text,fun1,fun2){
     if (!msg){
         msg = "确认执行这个操作吗？"
     }
-    if (!fun1){
+    console.log(typeof(fun1))
+    //fun1();
+    if (!fun1||typeof (fun1)!='function'){
         fun1 = function (){
             console.log("你执行了‘"+btn1Text+"’操作")
         }
     }
-    if (!fun2){
+    if (!fun2||typeof (fun2)!='function'){
         fun2 = function (){
             console.log("你执行了‘"+btn2Text+"’操作")
         }
@@ -62,10 +64,57 @@ function alertProp(title,msg,btn1Text,btn2Text,fun1,fun2){
         "</div><!-- /.modal -->"
     $(body).append(html);
     let model = $("#"+id);
-    model.on('show.bs.modal', centerModals(model));
+    //model.on('show.bs.modal', centerModals(model));
     model.modal('show')
-    $(window).on('resize', centerModals(model));
+    //$(window).on('resize', centerModals(model));
     model.on("hide.bs.modal",function (){
         $(model).remove();
     })
+}
+function alertWarning(title,msg,ms){
+    if (!title){
+        title = "警告！"
+    }
+    if (!msg){
+        msg = "你执行了危险操作"
+    }
+    if (!ms){
+        ms = 3000;
+    }
+    let html =
+        "<div class=\"alert alert-warning myAlertWarning\">\n" +
+        "    <a href=\"#\" class=\"close\" data-dismiss=\"alert\">\n" +
+        "        &times;\n" +
+        "    </a>\n" +
+        "    <strong>"+title+"</strong>"+msg+"\n" +
+        "</div>"
+    let body = $("body");
+    $(body).prepend(html);
+    setTimeout(function (){
+        //console.log(1111)
+        $(".myAlertWarning").remove();
+    },ms);
+}
+function alertSuccess(title,msg,ms){
+    if (!title){
+        title = "信息！"
+    }
+    if (!msg){
+        msg = "你成功执行了操作"
+    }
+    if (!ms){
+        ms = 3000;
+    }
+    let html =
+        "<div class=\"alert alert-success myAlertSuccess\">\n" +
+        "    <a href=\"#\" class=\"close\" data-dismiss=\"alert\">\n" +
+        "        &times;\n" +
+        "    </a>\n" +
+        "    <strong>"+title+"</strong>"+msg+"\n" +
+        "</div>"
+    let body = $("body");
+    $(body).prepend(html);
+    setTimeout(function (){
+        $(".myAlertSuccess").remove();
+    },ms);
 }

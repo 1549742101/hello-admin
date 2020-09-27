@@ -91,7 +91,7 @@ function BarEdit(parent,frame){
 }
 let objMenu = [];
 function createTreeMenu(parent,json){
-    console.log(json)
+    //console.log(json)
     objMenu = JSON.parse(json);
     let html = "";
     for (let i = 0; i < objMenu.length; i++) {
@@ -114,7 +114,7 @@ function createParent(icon,name,child){
 
     for (let i = 0; i < child.length; i++) {
         if(child[i].child){
-            children+=createParent(icon,name,child[i].child)
+            children+=createParent(icon,child[i].name,child[i].child)
         }else {
             children+=createChildMenu(child[i].url,child[i].icon,child[i].name);
         }
@@ -134,17 +134,32 @@ function openMenu(){
     let menuParent = $(".menu-tree").find(".parent");
     for (let i = 0; i < menuParent.length; i++) {
         $(menuParent[i]).click(function (){
+            let p1 = $(this).find("span")[1];
             if ($(this).hasClass("open")){
-                console.log($(this))
-                $(this).removeClass("open")
+                $(this).removeClass("open");
+                $(p1).addClass("icon-arrow-left-bold");
+                $(p1).removeClass("icon-arrow-down-bold");
                 return false;
             }
             $(menuParent).removeClass("open");
+            for (let j = 0; j < menuParent.length; j++) {
+                let p2 = $(menuParent[j]).find("span")[1];
+                $(p2).removeClass("icon-arrow-down-bold");
+                //console.log("remove",$(p2))
+                $(p2).addClass("icon-arrow-left-bold");
+                //console.log("add",$(p2))
+            }
+
             let testParent = $(this).parents(".parent");
             for (let j = 0; j < testParent.length; j++) {
                 $(testParent[j]).addClass("open");
+                let p1 = $(testParent[j]).find("span")[1];
+                $(p1).removeClass("icon-arrow-left-bold")
+                $(p1).addClass("icon-arrow-down-bold")
             }
             $(this).addClass("open")
+            $(p1).removeClass("icon-arrow-left-bold");
+            $(p1).addClass("icon-arrow-down-bold");
             return false;
         })
     }
